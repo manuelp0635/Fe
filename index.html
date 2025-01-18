@@ -1,835 +1,412 @@
 <!DOCTYPE html>
-<html  >
-    <head>
-        <!-- Site made with Mobirise Website Builder v5.8.14, https://mobirise.com -->
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="generator" content="Mobirise v5.8.14, mobirise.com">
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-        <link rel="shortcut icon" href="assets/images/logo-1642814059.png" type="image/x-icon">
-        <meta name="description" content="">
-        
-        
-        <title>Plus Laboratorio clinico</title>
-        <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-      
-      <!-- Mobirise Icons y Otros Estilos -->
-      <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-      <link rel="stylesheet" href="assets/dropdown/css/style.css">
-      <link rel="stylesheet" href="assets/socicon/css/styles.css">
-      <link rel="stylesheet" href="assets/theme/css/style.css">
-      <link rel="stylesheet" href="./styles.css">
-      
-      <!-- Fuentes de Google (preload) -->
-      <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-      <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
-      
-      <!-- Mobirise Additional Styles -->
-      <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
-      <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-
-      <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        .recommendations-section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .recommendations-title {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .video-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .video-card iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-        }
-        .video-content {
-            padding: 15px;
-        }
-        .video-title {
-            font-size: 1.2em;
-            margin: 0;
-            color: #333;
-        }
-        .video-description {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 10px;
-        }
-    </style>
-      
-      <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #f4f4f4;
-            color: #333;
-        }
-
-        .reservation-section {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .reservation-section h2 {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        .form-group-half {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .form-group-half .form-group {
-            flex: 1;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 0.8rem;
-            background: #007BFF;
-            color: #fff;
-            text-align: center;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: #0056b3;
-        }
-
-        @media (max-width: 768px) {
-            .form-group-half {
-                flex-direction: column;
-            }
-        }
-    </style>
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cap Fruto de vida.org</title>
     <style>
-        /* Estilos del blog */
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
-        }
-
-        .blog-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .blog-title {
-            text-align: center;
             color: #333;
-            margin-bottom: 1rem;
         }
-
-        .post {
-            margin-bottom: 2rem;
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        .post-title {
-            font-size: 1.5rem;
-            color: #007BFF;
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-
-        .post-title:hover {
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        header nav ul li {
+            display: inline;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+        header nav ul li a:hover {
             text-decoration: underline;
-            cursor: pointer;
         }
-
-        .post-date {
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 0.5rem;
-        }
-
-        .post-content {
-            font-size: 1rem;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .load-more {
-            display: block;
+        .hero {
+            background: url('https://via.placeholder.com/1920x600') center/cover no-repeat;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin: 1rem auto;
-            padding: 0.8rem;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .service-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            max-width: 300px;
+            text-align: center;
+        }
+        .service-card h3 {
+            color: #4CAF50;
+        }
+        .gallery img {
             width: 100%;
-            max-width: 200px;
-            background: #007BFF;
-            color: #fff;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .donations {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .donations form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .donations form input,
+        .donations form select,
+        .donations form button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .donations form button {
+            background-color: #4CAF50;
+            color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 1rem;
             cursor: pointer;
         }
-
-        .load-more:hover {
-            background: #0056b3;
+        .donations form button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 
+    <!-- Estilos de seccion donaciones -->
     <style>
-    /* Estilos básicos */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f4f4f4;
-    }
-
-    .whatsapp-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25D366;
-        color: #fff;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
-        z-index: 1000;
-    }
-
-    .whatsapp-button img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .whatsapp-button:hover {
-        background-color: #1ebe57;
-    }
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f9f9f9;
+          color: #333;
+      }
+      .container {
+          padding: 20px;
+          max-width: 800px;
+          margin: 0 auto;
+      }
+      h2 {
+          text-align: center;
+          color: #4CAF50;
+      }
+      .donations {
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          text-align: center;
+      }
+      .donations p {
+          margin-bottom: 20px;
+      }
+      .donations img {
+          margin: 20px 0;
+          width: 200px;
+          height: 200px;
+      }
+      .donations button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+      }
+      .donations button:hover {
+          background-color: #45a049;
+      }
     </style>
 
-      </head>
-
-
+    <!-- Estilos seccion contactanos -->
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f9f9f9;
+          color: #333;
+      }
+      .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+      }
+      h2 {
+          text-align: center;
+          color: #4CAF50;
+          margin-bottom: 20px;
+      }
+      .contact-section {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
+      }
+      .contact-info {
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          flex: 1 1 300px;
+          text-align: center;
+      }
+      .contact-info h3 {
+          margin-bottom: 10px;
+          color: #4CAF50;
+      }
+      .contact-info p {
+          margin: 5px 0;
+          font-size: 16px;
+      }
+      .map {
+          flex: 1 1 600px;
+          border-radius: 8px;
+          overflow: hidden;
+      }
+      .map iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+      }
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+          .contact-section {
+              flex-direction: column;
+              align-items: center;
+          }
+      }
+  </style>
+</head>
 <body>
-  
-    <section data-bs-version="5.1" class="menu menu2 cid-sFCw1qGFAI" once="menu" id="menu2-23">
-    
-        <nav class="navbar navbar-dropdown navbar-expand-lg">
-            <div class="container-fluid">
-                <div class="navbar-brand">
-                    <span class="navbar-logo">
-                        
-                            <img src="./assets/images/logo-1642814059.png" alt="" style="height: 3rem;">
-                    
-                    </span>
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-7" href="#"></a><!-- Texto --></span>
-                </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link link text-black text-primary dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Iniciar sesion</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown-388">
-                                <a class="text-black text-primary dropdown-item display-4" class="btn" href="http://localhost/laboratorio-master/login.php"  target="_blank">Usuario</a>
-                                <!--<a class="text-black text-primary dropdown-item display-4" class="btn" href="https://exchange.avalont.com.co/login"  target="_blank" id="download-lab">Laboratorio Clinico</a>
-                                <a class="text-black text-primary show dropdown-item display-4" class="btn" href="https://pacientes.oficinavirtual.com.co/login?idEmpresa=NjRjMmI5Mzg5ZTljY2E1NTMwNmE2NDkw&key=MjA0MTI5"  target="_blank" id="download-occupational">Salud Ocupacional</a>
-                            </div>-->
-                        </li>
-                    </ul>
-                </div>                
-            </div>
-        </nav>
-    </section>
-
-<!-- Video responsive carrrusel autoplay -->
- <br><br><br>
-
-        <!--<section data-bs-version="5.1" class="slider1 cid-u1JisDHOfe mbr-fullscreen" id="slider1-0">
-
-            <div id="myCarousel" class="carousel slide carousel-container" class="videoScreen" data-ride="carousel" id="large-video" class="embed-responsive-item" autoplay controls="controls">  <!-- Contenido del carrusel --
-                <div class="carousel-item active">  <video controls>    <source src="./assets/videos/Pruebavideo.mp4" type="video/mp4">    Tu navegador no admite el elemento de video.  </video>  
-                    <div class="carousel-caption">    
-                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>    
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>  
-                    </div>
-                </div>
-            </div>
-
-            <!-- Controles de Navegación --
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    
-   <!--<div id="carouselExample" class="carousel slide pointer-event" data-bs-ride="carousel" data-bs-interval="2500">
-        <div class="carousel-inner row-cols-1">
-
-            
-            <!-- Slide 1 --
-            <div class="carousel-item img-fluid">
-                <img src="./assets/images/logo-1642814059.png" class="d-block w-100 img-fluid h-50" alt="Slide 1">
-
-                <!--<div class="carousel-caption">
-                    <h5 class="mbr-section-subtitle mbr-fonts-style display-5">
-                        <strong>Hola soy Nati, Te daré atención inmediata</strong>
-                    </h5>
-                    <p class="mbr-section-text mbr-fonts-style display-7">con rapidez en tus requerimientos.</p>
-                </div>--
-                
-            </div>
-            
-            <!-- Slide moentqnio --
-            <div class="carousel-item">
-                <img src="./assets/images/examenesespecializados.jpg" class="d-block w-100 img-fluid h-50" alt="Slide 2">
-            </div> 
-            
-            <div class="carousel-item">
-                <img src="./assets/images/examenesrutinarios.jpg" class="d-block w-100 img-fluid h-50" alt="Slide 2">
-            </div>
-            
-             <!-- Slide 2 --
-            <div class="carousel-item">
-                <img src="./assets/images/lts-prueba-de-paternidad-1536x642.jpg" class="d-block w-100 img-fluid h-50" alt="Slide 2">
-            </div>
-              
-            <!-- Slide 3--
-            <div class="carousel-item active">
-                <img src="./assets/images/manipulacionalimentos.jpg" class="d-block w-100 img-fluid h-50 " alt="Slide 3">
-            </div>
-
-            <!-- Slide 4--
-            <div class="carousel-item">
-                <img src="./assets/images/pruebasembarazo.png" class="d-block w-100 img-fluid h-50 " alt="Slide 3">
-            </div>
-
-             <!-- Slide 5--
-             <div class="carousel-item">
-                <img src="./assets/images/saludocupacional.webp" class="d-block w-100 img-fluid h-50 " alt="Slide 3">
-            </div>
-            
-
-               <!-- Slide 6  --
-              <div class="carousel-item">
-                <img src="./assets/images/trabajoaltura.jpg" class="d-block w-100 img-fluid h-50 " alt="Slide 3">
-            </div>
-
-            <!-- Slide 7 --
-            <div class="carousel-item" class="videoScreen">
-                <center>
-                <video id="large-video" class="embed-responsive-item" autoplay controls="controls">
-                    <source src="./assets/videos/Pruebavideo.mp4" type="video/mp4">
-                </center>
-            </div>
-
-
+    <header>
+        <div class="container">
+            <h1>Cap Fruto de vida
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">Sobre nosotros</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#gallery">Galeria</a></li>
+                    <li><a href="#donations">Donaciones</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-        <!-- Controles de Navegación --
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>--
+    </header>
+
+    <div class="hero">
+        <h1>CAP Fruto de vida Un Lugar De Amor, Servicio y Fraternidad para tu familia.</h1>
     </div>
-    
-</section>-->
 
+    <div id="about" class="section container">
+        <h2>Sobre nosotros</h2>
+        <p>¡Bienvenidos a nuestra iglesia! Somos una comunidad de creyentes dedicados a difundir el amor, la fe y la esperanza. Únase a nosotros para servicios semanales, eventos comunitarios y crecimiento espiritual.</p>
+    </div>
 
-<!-- Inicio seccion nosotros ⬇️-->
+    <div id="services" class="section container">
+        <h2>Nuestros servicios</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Sunday Service</h3>
+                <p>Join us every Sunday at 10 AM for our main service.</p>
+            </div>
+            <div class="service-card">
+                <h3>Youth Meetings</h3>
+                <p>Friday evenings at 7 PM. Fun, fellowship, and faith.</p>
+            </div>
+            <div class="service-card">
+                <h3>Bible Study</h3>
+                <p>Wednesday at 6 PM. Deepen your understanding of the Word.</p>
+            </div>
+        </div>
+    </div>
 
-<section data-bs-version="5.1" class="header14  mbr-fullscreen mcb" id="header14-1j">
+    <div id="gallery" class="section container">
+        <h2>Galeria</h2>
+        <div class="gallery">
+            <img src="images/Eventos/438303786_122142121568186305_436602175313537733_n.jpg" alt="Church Event 1">
+            <img src="images/Eventos/parejas.jpg" alt="Church Event 2">
+            <!--<img src="#" alt="Church Event 3">
+            <img src="#" alt="Church Event 4">-->
+        </div>
+    </div>
 
+    <!-- Donaciones -->
+    <div id="donations" class="section container">
+      <div class="container">
+        <h2>Donaciones</h2>
+        <div class="donations">
+            <p>¡Tu apoyo hace la diferencia! Escanee el código QR a continuación para donar:</p>
+            <!-- QR Code Section -->
+            <img id="qrCode" src="www.google.es"> <!--alt="QR Code para donaciones"-->
+            <!-- Donation URL --><br>
+            <button id="donateButton">Donar ahora</button>
+        </div>
+    </div>
+       <!--- <h2>Donaciones</h2>
+        <div class="donations">
+            <p>Your generosity helps us continue our mission. Please use the form below to make a donation.</p>
+            <form id="donation-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <select id="amount" required>
+                    <option value="">Select Donation Amount</option>
+                    <option value="10">$10</option>
+                    <option value="50">$50</option>
+                    <option value="100">$100</option>
+                    <option value="500">$500</option>
+                </select>
+                <button type="submit">Donate</button>
+            </form>
+        </div>-->
+    </div>
+
+    <!-- Seccion contactanos -->
     <div class="container">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-md-5 image-wrapper">
-                        <img src="./assets/images/logo-1642814059.png" alt="Cambio imagen">
-            </div>
-            <div class="col-12 col-md">
-                <div class="text-wrapper"><br>
-                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2"><strong><!--Texto relacionado con el logo ---></strong></h1>
-                    <p class="mbr-text mbr-fonts-style display-7">Realizamos <b>examenes</b> de laboratorio de rutina y especializados, pruebas de <b>Paternidad</b> de excelente calidad y precios <b>accesibles</b>.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+      <h2>Contáctanos</h2>
+      <div class="contact-section">
+          <!-- Contact Information -->
+          <div class="contact-info">
+              <h3>Correo Electrónico</h3>
+              <p><a href="mailto:icapfrutodevida@gmail.com">icapfrutodevida@gmail.com</a></p>
+          </div>
+          <div class="contact-info">
+              <h3>Teléfono</h3>
+              <p><a href="tel:+57 310 8797672">+57 310 8797672</a></p>
+          </div>
+          <div class="contact-info">
+              <h3>Ubicación</h3>
+              <p>Los Alpes Transversal 71E 31G 29</p>
+          </div>
+          <!-- Google Map -->
+          <div class="map">
+              <iframe 
+                  src="//www.google.com/maps/embed?pb=!4v1737234954568!6m8!1m7!1sEHa3CdPZtyExgXz7Z4Ok7g!2m2!1d10.3979625142246!2d-75.48262905437338!3f355.8744008802324!4f-9.797446680106447!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+              </iframe>
+          </div>
+      </div>
+  </div>
 
-<section>
-<div class="recommendations-section">
-    <h1 class="recommendations-title">Recomendaciones</h1>
-    <div class="video-grid">
-        <div class="video-card">
-            <iframe src="./assets/videos/VID-20250116-WA0021.mp4" allowfullscreen></iframe>
-            <div class="video-content">
-                <!--<h3 class="video-title">Video 1: Ejemplo Inspirador</h3>
-                <p class="video-description">Este video te enseñará los conceptos básicos de HTML y CSS de forma divertida y práctica.</p>-->
-            </div>
-        </div>
-        <div class="video-card">
-            <iframe src="./assets/videos/VID-20250116-WA0022.mp4" allowfullscreen></iframe>
-            <div class="video-content">
-                <!--<h3 class="video-title">Video 2: Introducción a JavaScript</h3>
-                <p class="video-description">Aprende los fundamentos de JavaScript y cómo integrarlo con HTML y CSS para crear sitios interactivos.</p>-->
-            </div>
-        </div>
-        <div class="video-card">
-            <iframe src="./assets/videos/VID-20250116-WA0023.mp4" allowfullscreen></iframe>
-            <div class="video-content">
-                <!--<h3 class="video-title">Video 3: Diseños Responsivos</h3>
-                <p class="video-description">Descubre cómo diseñar páginas web que se adapten a todos los tamaños de pantalla.</p>-->
-            </div>
-        </div>
-        <div class="video-card">
-            <iframe src="./assets/videos/VID-20250116-WA0024.mp4" allowfullscreen></iframe>
-            <div class="video-content">
-                <!--<h3 class="video-title">Video 4: Ejemplo Inspirador</h3>
-                <p class="video-description">Este video te enseñará los conceptos básicos de HTML y CSS de forma divertida y práctica.</p>-->
-            </div>
-        </div>
-        <div class="video-card">
-            <iframe src="./assets/videos/VID-20250116-WA0025.mp4" allowfullscreen></iframe>
-            <div class="video-content">
-                <!--<h3 class="video-title">Video 5: Ejemplo Inspirador</h3>
-                <p class="video-description">Este video te enseñará los conceptos básicos de HTML y CSS de forma divertida y práctica.</p>-->
-            </div>
-        </div>
-    </div>
-</div>
-</section>
+    <!--<div id="contact" class="section container">
+        <h2>Contactanos</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>-->
 
-<!-- seccion nosotros -->
-<section class="contacts4 cid-sFAyMcKwph mcb" id="contacts4-21"> 
-    <div class="mbr-section-head">
-        <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Nosotros</strong></h4><br><br>
-        <!--<h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Nos mueve el deseo de servir.</h5>-->
-    </div>
+    <footer>
+        <p>&copy; 2025 Cap fruto de vida. All Rights Reserved.</p>
+    </footer>
 
-    <div class="container">
-        <div class="mbr-section-head">
-        <div class="row align-items-center justify-content-center">
-            <div class="text-content col-12 col-md-6">
-                <center><h2 class="mbr-section-title mbr-fonts-style display-4">
-                    <strong>Mision</strong></h2></center>
-                <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolorem architecto eligendi reiciendis, voluptas exercitationem quaerat repudiandae, quasi quo doloribus ipsum facilis. Explicabo sunt dolore nulla rem esse a eligendi.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="mbr-section-head">
-        <div class="row align-items-center justify-content-center">
-            <div class="text-content col-12">
-                <center><h2 class="mbr-section-title mbr-fonts-style display-4">
-                    <strong>Vision</strong></h2></center>
-                <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolorem architecto eligendi reiciendis, voluptas exercitationem quaerat repudiandae, quasi quo doloribus ipsum facilis. Explicabo sunt dolore nulla rem esse a eligendi.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="mbr-section-head">
-        <div class="row align-items-center justify-content-center">
-            <div class="text-content col-12 col-md-6">
-                <center><h2 class="mbr-section-title mbr-fonts-style display-4">
-                    <strong>Politica de calidad</strong></h2></center>
-                <p class="mbr-text mbr-fonts-style display-7">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolorem architecto eligendi reiciendis, voluptas exercitationem quaerat repudiandae, quasi quo doloribus ipsum facilis. Explicabo sunt dolore nulla rem esse a eligendi.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- El bendito slider-->
-<section data-bs-version="5.1" class="slider6 mbr-embla cid-u1POXRwmNA" id="slider6-c">
-    
-    
-    <div class="position-relative">
-        <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Nuestros Servicios</strong></h4>
-            <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Nos mueve el deseo de servir.</h5>
-        </div>
-        <div class="embla mt-4" data-skip-snaps="true" data-align="center" data-contain-scroll="trimSnaps" data-auto-play="true" data-auto-play-interval="5" data-draggable="true">
-            <div class="embla__viewport container-fluid is-draggable">
-                <div class="embla__container" style="transform: translate3d(-144.457%, 0px, 0px);">
-                    <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="assets/images/lts-prueba-de-paternidad-1536x642.jpg" alt="Urgencias GS" title="">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                
-                                <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Pruebas de Paternidad</strong></h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">Una prueba de paternidad es un test genético en el que se comparan una serie de marcadores de ADN procedentes del hijo con esos mismos marcadores en la muestra del presunto padre.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="embla__slide slider-image item is-selected" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="assets/images/saludocupacional.webp" alt="Unidad de cuidados críticos" title="">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Salud Ocupacional</strong>
-                                </h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">La salud ocupacional es una disciplina que se enfoca en la prevención de enfermedades y accidentes laborales, así como en la promoción y el mantenimiento del bienestar físico, mental y social de los trabajadores en su entorno de trabajo.<br>
-                                </p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="embla__slide slider-image item is-selected" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="assets/images/trabajoaltura.jpg" class="card-img-top" alt="Lorem">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Examenes para trabajos en altura</strong></h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">Los exámenes para trabajo en altura son evaluaciones específicas realizadas para determinar si un trabajador está física, mental y psicológicamente apto para realizar actividades en alturas.
-                                </p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="embla__slide slider-image item is-selected" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="assets/images/manipulacionalimentos.jpg" class="card-img-top" alt="Unidad de cuidados críticos" title="">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Examenes para manipulacion de alimentos</strong></h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">Los exámenes para manipulación de alimentos son evaluaciones médicas realizadas a personas que trabajan en actividades relacionadas con la preparación, procesamiento, almacenamiento, transporte o venta de alimentos.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <!--Anexos-->
-                    <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="assets/images/examenesrutinarios.jpg" class="card-img-top" alt="Unidad de cuidados críticos">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Examenes Rutinarios</strong></h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">
-                                    Los exámenes rutinarios son evaluaciones médicas generales realizadas de forma periódica, cuyo propósito es monitorear el estado de salud de una persona, detectar enfermedades en etapas tempranas y promover la prevención de condiciones crónicas o graves.</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="assets/images/examenesespecializados.jpg" alt="Mobirise Website Builder" title="">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Examenes Especializados</strong></h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">Los exámenes especializados son pruebas médicas avanzadas que se realizan para diagnosticar o evaluar con mayor precisión condiciones específicas de salud.
-                                </p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                        <div class="slide-content">
-                            <div class="item-wrapper">
-                                <div class="item-img">
-                                    <img src="assets/images/pruebasembarazo.png" alt="Mobirise Website Builder" title="">
-                                </div>
-                            </div>
-                            <div class="item-content">
-                                <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Pruebas de Embarazo en 15min</strong></h6>
-                                <p class="mbr-text mbr-fonts-style mt-3 display-7">La prueba de embarazo en 15 minutos es una herramienta rápida y efectiva para determinar si una persona está embarazada.
-                                </p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="embla__button embla__button--prev">
-                <span class="mobi-mbri mobi-mbri-arrow-prev mbr-iconfont" aria-hidden="true"></span>
-                <span class="sr-only visually-hidden visually-hidden">Previous</span>
-            </button>
-            <button class="embla__button embla__button--next">
-                <span class="mobi-mbri mobi-mbri-arrow-next mbr-iconfont" aria-hidden="true"></span>
-                <span class="sr-only visually-hidden visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-</section>
-
-
-
-<!-- Botón de WhatsApp -->
-<a 
-    href="https://wa.link/435hxe" 
-    class="whatsapp-button" 
-    target="_blank"
-    title="Contáctanos por WhatsApp"
->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
-
-<!-- siguenos -->
-<section data-bs-version="5.1" class="contacts4 cid-sFAyMcKwph mcb" id="contacts4-21">  
-
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="text-content col-12 col-md-6">
-                <h2 class="mbr-section-title mbr-fonts-style display-2">
-                    <strong>Siguenos</strong></h2>
-                <p class="mbr-text mbr-fonts-style display-7">Información de interés, actualizada y en tiempo real. Esperamos que nos visites en nuestras redes sociales.</p>
-            </div>
-            <div class="icons d-flex align-items-center col-12 col-md-6 justify-content-end mt-md-0 mt-2 flex-wrap">
-                <!--<a href="#" target="_blank">
-                    <span class="socicon-linkedin socicon mbr-iconfont mbr-iconfont-social"></span>
-                </a>
-                <a href="#" target="_blank">
-                    <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
-                </a>-->
-                <a href="#" target="_blank">
-                    <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
-                </a>
-                <a href="https://www.facebook.com/PlusLaboratorioClinico?mibextid=ZbWKwL" target="_white">
-                    <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                </a>     
-                
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ubicacion -->
-<section data-bs-version="5.1" class="contacts4 cid-sFAyMcKwph mcb" id="contacts4-21">  
-
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class="text-content col-12 col-md-6">
-                <h2 class="mbr-section-title mbr-fonts-style display-2">
-                    <strong>Conoce nuestra sede</strong></h2>
-                <p class="mbr-text mbr-fonts-style display-7">.</p>
-            </div>
-            <div class="icons d-flex align-items-center col-12 col-md-6 justify-content-end mt-md-0 mt-2 flex-wrap">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.2921330636327!2d-75.49837412586521!3d10.398356389728328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef625b88706e2b3%3A0xcdaaa4bbf49b9b47!2sCra.%2057%20%2330%20C%2C%20Escall%C3%B3n%20Villa%2C%20Cartagena%20de%20Indias%2C%20Provincia%20de%20Cartagena%2C%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1736953342822!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!--Footer -->
-<section data-bs-version="5.1" class="footer3 cid-sFCygHrmNf" once="footers" id="footer3-24">
-
-    <div class="container">
-        <div class="row align-center mbr-white">
-           
-         
-            <div class="row row-copirayt">
-                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                    Copyright © 2025. Todos los Derechos reservados <b> Plus Laboratorio clinico</b>
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    // Datos simulados de publicaciones
-    const blogPosts = [
-        { title: "¿Qué es la salud ocupacional?", date: "2025-01-01", content: "La salud ocupacional se centra en proteger y mejorar el bienestar de los trabajadores..." },
-        { title: "Importancia de la bacteriología clínica", date: "2024-12-20", content: "La bacteriología es crucial para el diagnóstico de infecciones y el desarrollo de tratamientos efectivos..." },
-        { title: "Cómo prevenir riesgos laborales", date: "2024-12-10", content: "Los riesgos laborales pueden minimizarse con la implementación de programas de prevención adecuados..." },
-        { title: "Beneficios de los análisis clínicos", date: "2024-11-30", content: "Los análisis clínicos proporcionan información clave para un diagnóstico médico preciso..." },
-        // Agrega más posts según sea necesario
-    ];
-
-    let postsPerPage = 2;
-    let currentPage = 1;
-
-    function loadPosts() {
-        const startIndex = (currentPage - 1) * postsPerPage;
-        const endIndex = currentPage * postsPerPage;
-        const postsToDisplay = blogPosts.slice(startIndex, endIndex);
-
-        const blogPostsContainer = document.getElementById("blog-posts");
-
-        postsToDisplay.forEach(post => {
-            const postElement = document.createElement("div");
-            postElement.classList.add("post");
-
-            postElement.innerHTML = `
-                <h2 class="post-title">${post.title}</h2>
-                <p class="post-date">Publicado el ${post.date}</p>
-                <p class="post-content">${post.content}</p>
-            `;
-
-            blogPostsContainer.appendChild(postElement);
+    <script>
+        // Scroll to section smoothly
+        document.querySelectorAll('header nav ul li a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
         });
 
-        if (endIndex >= blogPosts.length) {
-            document.getElementById("load-more").style.display = "none";
-        }
-    }
+        // Handle donation form submission
+        document.getElementById('donation-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const amount = document.getElementById('amount').value;
 
-    document.getElementById("load-more").addEventListener("click", () => {
-        currentPage++;
-        loadPosts();
-    });
-
-    // Cargar los primeros posts al inicio
-    loadPosts();
-</script>
-
-
-<script>
-    // Captura el formulario y el mensaje de éxito
-    const form = document.getElementById('reservation-form');
-    const successMessage = document.getElementById('success-message');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita el envío del formulario por defecto
-
-        // Validación básica
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const date = document.getElementById('date').value;
-        const time = document.getElementById('time').value;
-        const service = document.getElementById('service').value;
-
-        if (!name || !email || !date || !time || !service) {
-            alert('Por favor, completa todos los campos requeridos.');
-            return;
-        }
-
-        // Mostrar mensaje de éxito
-        successMessage.style.display = 'block';
-
-        // Limpiar el formulario después de un tiempo
-        setTimeout(() => {
-            successMessage.style.display = 'none';
-            form.reset();
-        }, 3000);
-    });
-</script>
-
-</script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="js/video.js"></script>
-<script>
-    function closeIframe() {
-        $(".iframe-container, .close-btn").hide();
-        $(".whatsapp-btn").show();
-    }
-
-    $(document).ready(function() {
-        // Al hacer clic en la imagen del botón, se muestra/oculta el contenido del iframe ; GustavoM
-        $(".whatsapp-btn").click(function() {
-            $(".iframe-container").toggle().css("border", "2px solid #35bdf3");
-            $(".whatsapp-btn").hide();
-            $(".close-btn").show();
+            if (name && email && amount) {
+                alert(`Thank you, ${name}! Your donation of $${amount} has been received.`);
+            } else {
+                alert('Please fill in all fields.');
+            }
         });
-    });
-</script> 
+    </script>
 
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script> 
- <script src="assets/smoothscroll/smooth-scroll.js"></script>  
- <script src="assets/ytplayer/index.js"></script>
-   <script src="assets/dropdown/js/navbar-dropdown.js"></script> 
-    <script src="assets/embla/embla.min.js"></script> 
-     <script src="assets/embla/script.js"></script>
-       <script src="assets/sociallikes/social-likes.js"></script>
-         <script src="assets/theme/js/script.js"></script> 
-          <script src="assets/formoid/formoid.min.js"></script> 
-  
+    <!-- Script para donaciones-->
+    <script>
+      // Donation URL (replace with your actual donation page URL)
+      const donationURL = "https://example.com/donate";
+
+      // Generate QR Code using Google Charts API
+      const qrCode = document.getElementById('qrCode');
+      qrCode.src = `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(donationURL)}&choe=UTF-8`;
+
+      // Redirect to the donation URL on button click
+      const donateButton = document.getElementById('donateButton');
+      donateButton.addEventListener('click', () => {
+          window.location.href = donationURL;
+      });
+    </script>
 </body>
 </html>
