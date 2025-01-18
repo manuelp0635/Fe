@@ -243,19 +243,211 @@
           }
       }
   </style>
+
+  <!-- Estilos menu responsive -->
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo */
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /* Navigation menu */
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hamburger menu for small screens */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 4px 0;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                background-color: #4CAF50;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+    </style>
+
+    <!-- estilos seccion contactanos responsive -->
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Section styles */
+        .contact-section {
+            padding: 40px 20px;
+            background-color: #f2f2f2;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Contact information */
+        .contact-info {
+            flex: 1 1 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Map container */
+        .map-container {
+            flex: 1 1 600px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Cap Fruto de vida
-            </h1>
-            <nav>
+            <div class="logo">Cap fruto de vida</div>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav id="navMenu">
                 <ul>
-                    <li><a href="#about">Sobre nosotros</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#gallery">Galeria</a></li>
-                    <li><a href="#donations">Donaciones</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#sobre nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#donaciones">Donaciones</a></li>
+                    <li><a href="#contactanos">Contáctanos</a></li>
                 </ul>
             </nav>
         </div>
@@ -265,13 +457,14 @@
         <h1>CAP Fruto de vida Un Lugar De Amor, Servicio y Fraternidad para tu familia.</h1>
     </div>
 
-    <div id="about" class="section container">
-        <h2>Sobre nosotros</h2>
-        <p>¡Bienvenidos a nuestra iglesia! Somos una comunidad de creyentes dedicados a difundir el amor, la fe y la esperanza. Únase a nosotros para servicios semanales, eventos comunitarios y crecimiento espiritual.</p>
-    </div>
-
-    <div id="services" class="section container">
-        <h2>Nuestros servicios</h2>
+    <!-- Example sections -->
+    <section id="about" style="padding: 50px; text-align: center;">
+        <h2>Sobre Nosotros</h2>
+        <p>Bienvenidos a nuestra iglesia, un lugar de fe, amor y esperanza.</p>
+    </section>
+    <section id="services" style="padding: 50px; text-align: center; background: #f2f2f2;">
+        <h2>Servicios</h2>
+        <p>Conoce nuestros servicios semanales y eventos especiales.</p>
         <div class="services">
             <div class="service-card">
                 <h3>Sunday Service</h3>
@@ -286,83 +479,49 @@
                 <p>Wednesday at 6 PM. Deepen your understanding of the Word.</p>
             </div>
         </div>
-    </div>
-
-    <div id="gallery" class="section container">
-        <h2>Galeria</h2>
+    </section>
+    <section id="gallery" style="padding: 50px; text-align: center;">
+        <h2>Galería</h2>
+        <p>Explora momentos especiales en nuestra comunidad.</p>
         <div class="gallery">
             <img src="images/Eventos/438303786_122142121568186305_436602175313537733_n.jpg" alt="Church Event 1">
             <img src="images/Eventos/parejas.jpg" alt="Church Event 2">
             <!--<img src="#" alt="Church Event 3">
             <img src="#" alt="Church Event 4">-->
         </div>
-    </div>
-
-    <!-- Donaciones -->
-    <div id="donations" class="section container">
-      <div class="container">
+    </section>
+    <section id="donations" style="padding: 50px; text-align: center; background: #f2f2f2;">
         <h2>Donaciones</h2>
+        <p>Tu generosidad nos ayuda a continuar nuestra misión.</p>
         <div class="donations">
-            <p>¡Tu apoyo hace la diferencia! Escanee el código QR a continuación para donar:</p>
             <!-- QR Code Section -->
             <img id="qrCode" src="www.google.es"> <!--alt="QR Code para donaciones"-->
             <!-- Donation URL --><br>
             <button id="donateButton">Donar ahora</button>
         </div>
-    </div>
-       <!--- <h2>Donaciones</h2>
-        <div class="donations">
-            <p>Your generosity helps us continue our mission. Please use the form below to make a donation.</p>
-            <form id="donation-form">
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <select id="amount" required>
-                    <option value="">Select Donation Amount</option>
-                    <option value="10">$10</option>
-                    <option value="50">$50</option>
-                    <option value="100">$100</option>
-                    <option value="500">$500</option>
-                </select>
-                <button type="submit">Donate</button>
-            </form>
-        </div>-->
-    </div>
-
-    <!-- Seccion contactanos -->
-    <div class="container">
-      <h2>Contáctanos</h2>
-      <div class="contact-section">
-          <!-- Contact Information -->
-          <div class="contact-info">
-              <h3>Correo Electrónico</h3>
-              <p><a href="mailto:icapfrutodevida@gmail.com">icapfrutodevida@gmail.com</a></p>
-          </div>
-          <div class="contact-info">
-              <h3>Teléfono</h3>
-              <p><a href="tel:+57 310 8797672">+57 310 8797672</a></p>
-          </div>
-          <div class="contact-info">
-              <h3>Ubicación</h3>
-              <p>Los Alpes Transversal 71E 31G 29</p>
-          </div>
-          <!-- Google Map -->
-          <div class="map">
-              <iframe 
-                  src="//www.google.com/maps/embed?pb=!4v1737234954568!6m8!1m7!1sEHa3CdPZtyExgXz7Z4Ok7g!2m2!1d10.3979625142246!2d-75.48262905437338!3f355.8744008802324!4f-9.797446680106447!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
-              </iframe>
-          </div>
-      </div>
-  </div>
-
-    <!--<div id="contact" class="section container">
-        <h2>Contactanos</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>-->
+    </section>
+    <section id="donations" class="contact-section" style="padding: 50px; text-align: center; background: #f2f2f2;"></section>
+        <h2>Contáctanos</h2>
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>Correo Electrónico</h3>
+                <p><a href="mailto:icapfrutodevida@gmail.com">icapfrutodevida@gmail.com</a></p>
+                <h3>Teléfono</h3>
+                <p><a href="tel:+57 310 8797672">+57 310 8797672</a></p>
+                <h3>Dirección</h3>
+                <p>Los Alpes Transversal 71E 31G 29</p>
+            </div>
+            <!-- Map -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!4v1737234954568!6m8!1m7!1sEHa3CdPZtyExgXz7Z4Ok7g!2m2!1d10.3979625142246!2d-75.48262905437338!3f355.8744008802324!4f-9.797446680106447!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2025 Cap fruto de vida. All Rights Reserved.</p>
@@ -407,6 +566,24 @@
       donateButton.addEventListener('click', () => {
           window.location.href = donationURL;
       });
+    </script>
+
+    <!-- script menu responsive -->
+    <script>
+        // Toggle navigation menu
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link (mobile)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>
