@@ -618,3 +618,129 @@ footer {
         bottom: 90px;
       }
     }
+
+    /* ===============================
+   SECCIÓN DE CONTACTO / VIDEO
+   Cap Fruto de Vida
+================================= */
+
+.centered-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #ffffff, #f5f7fa);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  scroll-margin-top: 100px; /* mejora UX en navegación */
+}
+
+.centered-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #1b2a49;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.centered-section h2 b {
+  color: #0077cc;
+  font-weight: 800;
+}
+
+/* ===============================
+   VIDEO CONTAINER
+================================= */
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: #000;
+}
+
+.video-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ===============================
+   VIDEO RESPONSIVE + CONTROLES
+================================= */
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: none;
+  border-radius: 16px;
+  outline: none;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+/* Efecto visual cuando el usuario pasa el mouse */
+.video-container video:hover {
+  filter: brightness(1.1);
+}
+
+/* ===============================
+   EXPERIENCIA DE USUARIO (UX)
+================================= */
+
+/* Indicador visual de que el video es interactivo */
+.video-container::after {
+  content: "▶️";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.video-container:hover::after {
+  opacity: 0.6;
+}
+
+/* Al reproducir, ocultamos el ícono */
+.video-container.playing::after {
+  opacity: 0;
+}
+
+/* ===============================
+   MEDIA QUERIES
+================================= */
+
+@media (max-width: 768px) {
+  .centered-section {
+    padding: 60px 15px;
+  }
+
+  .centered-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .video-container {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .centered-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .video-container::after {
+    font-size: 2.4rem;
+  }
+}
