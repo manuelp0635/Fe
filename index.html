@@ -1,585 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cap Fruto de vida.org</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 15px;
-        }
-        header nav ul li {
-            display: inline;
-        }
-        header nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-        }
-        header nav ul li a:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            background: url('https://via.placeholder.com/1920x600') center/cover no-repeat;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-        .hero h1 {
-            font-size: 2.5em;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-        }
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section {
-            margin: 40px 0;
-        }
-        .section h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #4CAF50;
-        }
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .service-card {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            max-width: 300px;
-            text-align: center;
-        }
-        .service-card h3 {
-            color: #4CAF50;
-        }
-        .gallery img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 8px;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        .donations {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .donations form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .donations form input,
-        .donations form select,
-        .donations form button {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .donations form button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .donations form button:hover {
-            background-color: #45a049;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
+<html lang="es">
+  <head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cap Fruto de Vida | Cruzada Cristiana</title>
 
-    <!-- Estilos de seccion donaciones -->
-    <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f9f9f9;
-          color: #333;
-      }
-      .container {
-          padding: 20px;
-          max-width: 800px;
-          margin: 0 auto;
-      }
-      h2 {
-          text-align: center;
-          color: #4CAF50;
-      }
-      .donations {
-          background: white;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          text-align: center;
-      }
-      .donations p {
-          margin-bottom: 20px;
-      }
-      .donations img {
-          margin: 20px 0;
-          width: 200px;
-          height: 200px;
-      }
-      .donations button {
-          background-color: #4CAF50;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          font-size: 16px;
-      }
-      .donations button:hover {
-          background-color: #45a049;
-      }
-    </style>
+    <!-- DESCRIPCIÓN -->
+    <meta
+      name="description"
+      content="Ministerio cristiano Cap Fruto de Vida, compartiendo el mensaje de esperanza, fe y amor de Dios."
+    />
 
-    <!-- Estilos seccion contactanos -->
-    <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f9f9f9;
-          color: #333;
-      }
-      .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 20px;
-      }
-      h2 {
-          text-align: center;
-          color: #4CAF50;
-          margin-bottom: 20px;
-      }
-      .contact-section {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 20px;
-          justify-content: center;
-      }
-      .contact-info {
-          background: white;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          flex: 1 1 300px;
-          text-align: center;
-      }
-      .contact-info h3 {
-          margin-bottom: 10px;
-          color: #4CAF50;
-      }
-      .contact-info p {
-          margin: 5px 0;
-          font-size: 16px;
-      }
-      .map {
-          flex: 1 1 600px;
-          border-radius: 8px;
-          overflow: hidden;
-      }
-      .map iframe {
-          width: 100%;
-          height: 100%;
-          border: none;
-      }
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-          .contact-section {
-              flex-direction: column;
-              align-items: center;
-          }
-      }
-  </style>
+    <!-- FAVICON -->
+    <link rel="icon" href="./images/Logo/logo.jpg" type="image/x-icon" />
 
-  <!-- Estilos menu responsive -->
-    <style>
-        /* General styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
+    <!-- FUENTE Y ESTILOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <!-- BOTÓN DEL ASESOR VIRTUAL -->
+    <button
+      class="asesor-btn"
+      onclick="toggleAsesor()"
+      title="Habla con Tabocap"
+    >
+      💬
+    </button>
 
-        /* Header styles */
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Logo */
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        /* Navigation menu */
-        nav {
-            display: flex;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 15px;
-        }
-
-        nav ul li {
-            display: inline;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1em;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Hamburger menu for small screens */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 4px 0;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-                flex-direction: column;
-                background-color: #4CAF50;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                padding: 10px 0;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            nav.active {
-                display: flex;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-                align-items: center;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-        }
-    </style>
-
-    <!-- estilos seccion contactanos responsive -->
-    <style>
-        /* General styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        /* Section styles */
-        .contact-section {
-            padding: 40px 20px;
-            background-color: #f2f2f2;
-        }
-
-        .contact-section h2 {
-            text-align: center;
-            color: #4CAF50;
-            margin-bottom: 20px;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        /* Contact information */
-        .contact-info {
-            flex: 1 1 300px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-info h3 {
-            color: #4CAF50;
-            margin-bottom: 10px;
-        }
-
-        .contact-info p {
-            margin: 5px 0;
-            font-size: 16px;
-        }
-
-        .contact-info a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Map container */
-        .map-container {
-            flex: 1 1 600px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .contact-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">Cap fruto de vida</div>
-            <div class="hamburger" id="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <nav id="navMenu">
-                <ul>
-                    <li><a href="#sobre nosotros">Sobre Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="#donaciones">Donaciones</a></li>
-                    <li><a href="#contactanos">Contáctanos</a></li>
-                </ul>
-            </nav>
+    <!-- CONTENEDOR DEL ASESOR -->
+    <div class="asesor" id="asesorVirtual">
+      <div class="asesor-header">
+        <div class="asesor-info">
+          <img
+            src="./images/Logo/Tabocap.jpg"
+            alt="Tabocap"
+            class="asesor-avatar"
+          />
+          <div>
+            <h4>Tabocap</h4>
+            <span>Asesor Virtual</span>
+          </div>
         </div>
-    </header>
+        <button onclick="cerrarAsesor()" class="cerrar-btn">✖</button>
+      </div>
 
-    <div class="hero">
-        <h1>CAP Fruto de vida Un Lugar De Amor, Servicio y Fraternidad para tu familia.</h1>
+      <div class="asesor-mensajes" id="mensajesAsesor"></div>
+
+      <div class="asesor-input">
+        <input
+          id="inputAsesor"
+          type="text"
+          placeholder="Escribe tu mensaje..."
+        />
+        <button onclick="enviarMensaje()" class="enviar-btn">➤</button>
+      </div>
     </div>
 
-    <!-- Example sections -->
-    <section id="about" style="padding: 50px; text-align: center;">
+    <!-- ENCABEZADO -->
+    <header class="site-header">
+      <div class="container">
+        <div class="logo"><img src="./im" alt=""></div>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+        <nav id="navMenu" class="nav-menu">
+          <ul>
+            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#gallery">Galería</a></li>
+            <li><a href="#donaciones">Donaciones</a></li>
+            <li><a href="#contact">Contáctanos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- SECCIONES -->
+    <main>
+      <section class="hero">
+        <h1>Cap Fruto de Vida</h1>
+        <p>
+          🙌 Próximamente grandes cosas están por venir. ¡Dios tiene el control!
+        </p>
+      </section>
+
+      <section id="about" class="section">
         <h2>Sobre Nosotros</h2>
-        <p>Bienvenidos a nuestra iglesia, un lugar de fe, amor y esperanza.</p>
-    </section>
-    <section id="services" style="padding: 50px; text-align: center; background: #f2f2f2;">
+        <p>
+          Cap Fruto de Vida es un ministerio basado en el <b>amor</b>,
+          <b>servicio</b> y <b>unidad en Cristo</b>.
+        </p>
+      </section>
+
+      <section id="services" class="section alt">
         <h2>Servicios</h2>
-        <p>Conoce nuestros servicios semanales y eventos especiales.</p>
-        <div class="services">
-            <div class="service-card">
-                <h3>Sunday Service</h3>
-                <p>Join us every Sunday at 10 AM for our main service.</p>
-            </div>
-            <div class="service-card">
-                <h3>Youth Meetings</h3>
-                <p>Friday evenings at 7 PM. Fun, fellowship, and faith.</p>
-            </div>
-            <div class="service-card">
-                <h3>Bible Study</h3>
-                <p>Wednesday at 6 PM. Deepen your understanding of the Word.</p>
-            </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Reuniones</h3>
+            <p><b>Viernes:</b> Sobrenatural 7:00 pm</p>
+            <p><b>Sábado:</b> Jóvenes 6:00 pm</p>
+            <p><b>Domingo:</b> Familia Unidad 9:00 am</p>
+          </div>
+          <div class="service-card">
+            <h3>Transmisiones</h3>
+            <p>🎥 Muy pronto comenzaremos nuestras transmisiones en vivo.</p>
+          </div>
+          <div class="service-card">
+            <h3>Estudio Bíblico</h3>
+            <p>📖 Profundiza en la palabra con nosotros cada semana.</p>
+          </div>
         </div>
-    </section>
-    <section id="gallery" style="padding: 50px; text-align: center;">
+      </section>
+
+      <section id="gallery" class="section">
         <h2>Galería</h2>
-        <p>Explora momentos especiales en nuestra comunidad.</p>
         <div class="gallery">
-            <img src="images/Eventos/438303786_122142121568186305_436602175313537733_n.jpg" alt="Church Event 1">
-            <img src="images/Eventos/parejas.jpg" alt="Church Event 2">
-            <!--<img src="#" alt="Church Event 3">
-            <img src="#" alt="Church Event 4">-->
+          <img
+            src="images/Eventos/438303786_122142121568186305_436602175313537733_n.jpg"
+            alt="Evento 1"
+          />
+          <img src="images/Eventos/parejas.jpg" alt="Evento 2" />
         </div>
-    </section>
-    <section id="donations" style="padding: 50px; text-align: center; background: #f2f2f2;">
+      </section>
+
+      <section id="donaciones" class="section alt">
         <h2>Donaciones</h2>
-        <p>Tu generosidad nos ayuda a continuar nuestra misión.</p>
+        <p>
+          Tu generosidad nos permite seguir compartiendo el mensaje de fe y
+          amor. 💖
+        </p>
         <div class="donations">
-            <!-- QR Code Section -->
-            <img id="qrCode" src="www.google.es"> <!--alt="QR Code para donaciones"-->
-            <!-- Donation URL --><br>
-            <button id="donateButton">Donar ahora</button>
+          <img id="qrCode" src="" alt="Código QR Nequi" class="qr-image" />
+          <p>
+            <strong>Escanea con Nequi</strong> 📱<br />Cuenta a nombre de
+            <b>Cap Fruto de Vida</b>
+          </p>
+          <p>Número de cuenta: <b>310 8797672</b></p>
+          <button id="donateButton" class="btn-primary">Donar con Nequi</button>
         </div>
-    </section>
-    <section id="donations" class="contact-section" style="padding: 50px; text-align: center; background: #f2f2f2;"></section>
-        <h2>Contáctanos</h2>
-        <div class="contact-container">
-            <!-- Contact Information -->
-            <div class="contact-info">
-                <h3>Correo Electrónico</h3>
-                <p><a href="mailto:icapfrutodevida@gmail.com">icapfrutodevida@gmail.com</a></p>
-                <h3>Teléfono</h3>
-                <p><a href="tel:+57 310 8797672">+57 310 8797672</a></p>
-                <h3>Dirección</h3>
-                <p>Los Alpes Transversal 71E 31G 29</p>
-            </div>
-            <!-- Map -->
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!4v1737237601595!6m8!1m7!1sEHa3CdPZtyExgXz7Z4Ok7g!2m2!1d10.3979625142246!2d-75.48262905437338!3f334.82!4f-11.989999999999995!5f0.5970117501821992" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+      </section>
+
+      <section id="contact" class="section centered-section">
+        <h2>Fortalecidos en el <b>Espíritu</b></h2>
+        <div class="video-container">
+          <video src="./images/videos/FDownloader.Net_AQNSSFe2-ZzSxK7dAIJ7K2Y0j3C4HgrWb2YqMwBCpguq-2Gz6o1tVbhyzmr1YQmAGdjdMSLwvqh8z2dHRxInj2M0BIFQOsVb91q9MRo_720p_(HD).mp4"</video>
         </div>
-    </section><br>
+      </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Cap fruto de vida. All Rights Reserved.</p>
+      <p>&copy; 2025 Cap Fruto de Vida. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- =========================
+       SCRIPT MEJORADO UX/UI
+  ========================= -->
     <script>
-        // Scroll to section smoothly
-        document.querySelectorAll('header nav ul li a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-            });
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        hamburger.classList.toggle("open");
+      });
+
+      document.querySelectorAll("header nav a").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+            navMenu.classList.remove("active");
+            hamburger.classList.remove("open");
+          }
         });
-
-        // Handle donation form submission
-        document.getElementById('donation-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const amount = document.getElementById('amount').value;
-
-            if (name && email && amount) {
-                alert(`Thank you, ${name}! Your donation of $${amount} has been received.`);
-            } else {
-                alert('Please fill in all fields.');
-            }
-        });
-    </script>
-
-    <!-- Script para donaciones-->
-    <script>
-      // Donation URL (replace with your actual donation page URL)
-      const donationURL = "https://example.com/donate";
-
-      // Generate QR Code using Google Charts API
-      const qrCode = document.getElementById('qrCode');
-      qrCode.src = `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(donationURL)}&choe=UTF-8`;
-
-      // Redirect to the donation URL on button click
-      const donateButton = document.getElementById('donateButton');
-      donateButton.addEventListener('click', () => {
-          window.location.href = donationURL;
       });
     </script>
 
-    <!-- script menu responsive -->
-    <script>
-        // Toggle navigation menu
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
+    <!-- Script para donaciones -->
+    <script
+        const donationURL = "https://wa.me/573108797672?text=Deseo+realizar+una+donación+a+Cap+Fruto+de+Vida";
+        document.getElementById('qrCode').src =
+        `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(donationURL)}&choe=UTF-8`;
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking a link (mobile)
-        navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
+        document.getElementById('donateButton').addEventListener('click', () => {
+        window.open(donationURL, '_blank');
         });
     </script>
-</body>
+
+    <!-- Script para el asesor virtual -->
+
+    <script>
+      // =========================
+      // CONFIGURACIÓN PRINCIPAL
+      // =========================
+
+      const boton = document.querySelector(".asesor-btn");
+      const asesor = document.getElementById("asesorVirtual");
+      const mensajes = document.getElementById("mensajesAsesor");
+      const input = document.getElementById("inputAsesor");
+      const sonidoNotificacion = new Audio(
+        "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c4f4eae84e.mp3?filename=click-124467.mp3"
+      );
+
+      // =========================
+      // APERTURA AUTOMÁTICA
+      // =========================
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          asesor.classList.add("activo");
+          agregarMensajeBot(
+            "👋 ¡Hola! Soy <strong>Tabocap</strong>, tu asesor virtual de <strong>Cap Fruto de Vida</strong> 💚"
+          );
+          agregarMensajeBot(
+            "¿En qué puedo ayudarte hoy? Aquí tienes las opciones disponibles:<br><br>1️⃣ Horarios de reuniones<br>2️⃣ Donaciones y apoyo<br>3️⃣ Ubicación<br>4️⃣ Peticiones de oración<br>5️⃣ Proyectos y cruzadas<br>6️⃣ Contacto<br>7️⃣ Redes sociales<br>8️⃣ Eventos y actividades"
+          );
+        }, 1500);
+      });
+
+      // =========================
+      // ABRIR / CERRAR ASESOR
+      // =========================
+      boton.addEventListener("click", () => {
+        asesor.classList.toggle("activo");
+        boton.classList.toggle("activo");
+        sonidoNotificacion.play();
+      });
+
+      function cerrarAsesor() {
+        asesor.classList.remove("activo");
+        boton.classList.remove("activo");
+      }
+
+      // =========================
+      // ENVÍO DE MENSAJE
+      // =========================
+      function enviarMensaje() {
+        const texto = input.value.trim();
+        if (texto === "") return;
+
+        const msgUsuario = document.createElement("div");
+        msgUsuario.className = "mensaje usuario";
+        msgUsuario.textContent = texto;
+        mensajes.appendChild(msgUsuario);
+        mensajes.scrollTop = mensajes.scrollHeight;
+
+        input.value = "";
+        mostrarIndicador();
+        setTimeout(() => procesarRespuesta(texto), 1000);
+      }
+
+      // =========================
+      // PROCESAR RESPUESTAS AUTOMÁTICAS
+      // =========================
+      function procesarRespuesta(texto) {
+        ocultarIndicador();
+        const t = texto.toLowerCase();
+        let respuesta = "";
+
+        if (t.includes("1") || t.includes("horario")) {
+          respuesta =
+            "🕒 Nuestros servicios son los domingos a las 10:00 a.m. y los miércoles a las 7:00 p.m. ¡Te esperamos!";
+        } else if (t.includes("2") || t.includes("donación")) {
+          respuesta =
+            "🙏 Puedes apoyar la obra en la sección <strong>‘Donaciones’</strong> o contactándonos directamente.";
+        } else if (
+          t.includes("3") ||
+          t.includes("ubicación") ||
+          t.includes("dónde")
+        ) {
+          respuesta =
+            "📍 Nos encontramos en Cartagena. Aquí puedes ver nuestra ubicación:<br><br><iframe src='https://www.google.com/maps/embed?pb=!4v1760019686804!6m8!1m7!1sEHa3CdPZtyExgXz7Z4Ok7g!2m2!1d10.39796204149916!2d-75.48262603249093!3f339.28!4f-9.04!5f1.9218592443597333' width='100%' height='200' style='border:0; border-radius:10px;' allowfullscreen='' loading='lazy'></iframe>";
+        } else if (t.includes("4") || t.includes("oración")) {
+          respuesta =
+            "🙏 Déjame tu nombre y motivo de oración, y nuestro equipo orará por ti con fe.";
+        } else if (
+          t.includes("5") ||
+          t.includes("proyecto") ||
+          t.includes("cruzada")
+        ) {
+          respuesta =
+            "🔥 Actualmente desarrollamos proyectos evangelísticos. Pronto los verás publicados aquí.";
+        } else if (
+          t.includes("6") ||
+          t.includes("contacto") ||
+          t.includes("teléfono")
+        ) {
+          respuesta =
+            "📞 Puedes comunicarte con nosotros al <strong>+57 310 8797672</strong>. ¡Será un placer atenderte!";
+        } else if (
+          t.includes("7") ||
+          t.includes("redes") ||
+          t.includes("facebook") ||
+          t.includes("instagram")
+        ) {
+          respuesta =
+            "🌐 Síguenos en nuestras redes:<br><br>📘 <a href='https://www.facebook.com/profile.php?id=61555589166212' target='_blank'>Facebook</a><br>📸 <a href='https://www.instagram.com/capfrutodevida/' target='_blank'>Instagram</a>";
+        } else if (t.includes("8") || t.includes("evento")) {
+          respuesta =
+            "📅 Próximamente compartiremos nuestros próximos eventos y actividades aquí.";
+        } else {
+          respuesta =
+            "🤖 No entendí muy bien, pero puedo ayudarte con:<br>1️⃣ Horarios<br>2️⃣ Donaciones<br>3️⃣ Ubicación<br>4️⃣ Oración<br>5️⃣ Proyectos<br>6️⃣ Contacto<br>7️⃣ Redes<br>8️⃣ Eventos";
+        }
+
+        setTimeout(() => agregarMensajeBot(respuesta), 500);
+      }
+
+      // =========================
+      // AGREGAR MENSAJES DEL BOT
+      // =========================
+      function agregarMensajeBot(texto) {
+        const msgBot = document.createElement("div");
+        msgBot.className = "mensaje bot";
+        msgBot.innerHTML = texto;
+        mensajes.appendChild(msgBot);
+        mensajes.scrollTop = mensajes.scrollHeight;
+        sonidoNotificacion.play();
+      }
+
+      // =========================
+      // INDICADOR DE "ESCRIBIENDO..."
+      // =========================
+      function mostrarIndicador() {
+        const indicador = document.createElement("div");
+        indicador.className = "indicador";
+        indicador.textContent = "Tabocap está escribiendo...";
+        mensajes.appendChild(indicador);
+        mensajes.scrollTop = mensajes.scrollHeight;
+      }
+
+      function ocultarIndicador() {
+        const indicador = document.querySelector(".indicador");
+        if (indicador) indicador.remove();
+      }
+    </script>
+
+    <!-- Seccion video pie de pagina -->
+    <script>
+  const video = document.querySelector(".video-container video");
+  const container = document.querySelector(".video-container");
+
+  video.addEventListener("play", () => container.classList.add("playing"));
+  video.addEventListener("pause", () => container.classList.remove("playing"));
+</script>
+
+  </body>
 </html>
