@@ -1,0 +1,620 @@
+/* =============================
+   ESTILOS GLOBALES UX/UI
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Colores temáticos */
+:root {
+  --verde: #3ab34a;
+  --dorado: #f4b400;
+  --azul: #004aad;
+  --blanco: #ffffff;
+  --gris: #f1f1f1;
+  --sombra: rgba(0, 0, 0, 0.1);
+}
+
+/* =============================
+   ENCABEZADO Y NAVEGACIÓN
+============================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--blanco);
+  box-shadow: 0 2px 10px var(--sombra);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--azul);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ---------- Menú Hamburguesa ---------- */
+.hamburger {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--azul);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ---------- Navegación ---------- */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100vh;
+  background: var(--blanco);
+  box-shadow: -2px 0 15px var(--sombra);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.4s ease;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+.nav-menu li {
+  margin: 20px 0;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--azul);
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--verde);
+}
+
+/* =============================
+   HERO SECTION
+============================= */
+.hero {
+  text-align: center;
+  background: linear-gradient(135deg, var(--azul), var(--verde));
+  color: var(--blanco);
+  padding: 100px 20px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* =============================
+   SECCIONES GENERALES
+============================= */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section.alt {
+  background: var(--gris);
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  color: var(--azul);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--verde);
+  margin: 10px auto 0;
+  border-radius: 10px;
+}
+
+/* =============================
+   SERVICIOS
+============================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--blanco);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px var(--sombra);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* =============================
+   GALERÍA
+============================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px var(--sombra);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* =============================
+   DONACIONES
+============================= */
+.donations {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.qr-image {
+  width: 180px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  background: var(--verde);
+  color: var(--blanco);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #2a9237;
+  transform: scale(1.05);
+}
+
+/* =============================
+   VIDEO CENTRADO
+============================= */
+.centered-section {
+  text-align: center;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* =============================
+   ASESOR VIRTUAL (TABOCAP)
+============================= */
+.asesor-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--azul);
+  color: var(--blanco);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px var(--sombra);
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 1001;
+}
+
+.asesor-btn:hover {
+  background: var(--verde);
+  transform: scale(1.1);
+}
+
+.asesor {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 320px;
+  background: var(--blanco);
+  border-radius: 15px;
+  box-shadow: 0 5px 20px var(--sombra);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 1002;
+}
+
+.asesor.activo {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Encabezado del asesor */
+.asesor-header {
+  background: var(--azul);
+  color: var(--blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.asesor-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.asesor-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.cerrar-btn {
+  background: none;
+  border: none;
+  color: var(--blanco);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Mensajes */
+.asesor-mensajes {
+  padding: 15px;
+  height: 280px;
+  overflow-y: auto;
+  background: #f9f9f9;
+}
+
+.mensaje {
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 12px;
+  display: inline-block;
+  max-width: 80%;
+  word-wrap: break-word;
+  animation: fadeInUp 0.3s ease;
+}
+
+.mensaje.usuario {
+  background: var(--verde);
+  color: var(--blanco);
+  align-self: flex-end;
+  float: right;
+  clear: both;
+}
+
+.mensaje.bot {
+  background: #e8e8e8;
+  color: #333;
+  float: left;
+  clear: both;
+}
+
+.indicador {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 8px;
+  font-style: italic;
+}
+
+/* Entrada de texto */
+.asesor-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 8px;
+  background: #fff;
+}
+
+.asesor-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.asesor-input input:focus {
+  border-color: var(--azul);
+}
+
+.enviar-btn {
+  background: var(--verde);
+  color: var(--blanco);
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.enviar-btn:hover {
+  background: #2a9237;
+}
+
+/* =============================
+   PIE DE PÁGINA
+============================= */
+footer {
+  background: var(--azul);
+  color: var(--blanco);
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+}
+
+/* =============================
+   ANIMACIONES
+============================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================
+   RESPONSIVE DESIGN
+============================= */
+@media (min-width: 768px) {
+  .nav-menu {
+    position: static;
+    background: none;
+    height: auto;
+    box-shadow: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    right: 0;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    gap: 25px;
+  }
+
+  .nav-menu li {
+    margin: 0;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .asesor {
+    width: 350px;
+  }
+}
+
+
+/* ======= ASESOR VIRTUAL (TABOCAP) ======= */
+    .asesor-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: pulse 2s infinite;
+      z-index: 1000;
+    }
+
+    .asesor-btn:hover {
+      background-color: #218838;
+      transform: scale(1.1);
+      transition: all 0.2s ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(40,167,69, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(40,167,69, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(40,167,69, 0); }
+    }
+
+    /* ======= CONTENEDOR DEL CHAT ======= */
+    .asesor {
+      position: fixed;
+      bottom: 100px;
+      right: 25px;
+      width: 320px;
+      max-width: 90%;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 999;
+      animation: aparecer 0.4s ease;
+    }
+
+    .asesor.activo {
+      display: flex;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .asesor-header {
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .asesor-header button {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .asesor-mensajes {
+      padding: 10px;
+      height: 250px;
+      overflow-y: auto;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .mensaje {
+      max-width: 80%;
+      padding: 8px 10px;
+      border-radius: 10px;
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
+
+    .mensaje.usuario {
+      align-self: flex-end;
+      background-color: #e1f3e3;
+    }
+
+    .mensaje.bot {
+      align-self: flex-start;
+      background-color: #f1f1f1;
+    }
+
+    .asesor-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    .asesor-input input {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .asesor-input button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      cursor: pointer;
+      border-radius: 0 0 10px 0;
+    }
+
+    .asesor-input button:hover {
+      background-color: #218838;
+    }
+
+    /* ======= RESPONSIVE ======= */
+    @media (max-width: 480px) {
+      .asesor {
+        width: 90%;
+        right: 5%;
+        bottom: 90px;
+      }
+    }
