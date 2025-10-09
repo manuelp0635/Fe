@@ -24,7 +24,7 @@
     />
     <link rel="stylesheet" href="css/estilos.css" />
   </head>
-  <body>
+  <scr>
     <!-- BOTÓN DEL ASESOR VIRTUAL -->
     <button
       class="asesor-btn"
@@ -65,22 +65,29 @@
 
     <!-- ENCABEZADO -->
     <header class="site-header">
-      <div class="container">
-        <div class="logo"><img src="./im" alt=""></div>
-        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-          <span></span><span></span><span></span>
-        </button>
-        <nav id="navMenu" class="nav-menu">
-          <ul>
-            <li><a href="#about">Sobre Nosotros</a></li>
-            <li><a href="#services">Servicios</a></li>
-            <li><a href="#gallery">Galería</a></li>
-            <li><a href="#donaciones">Donaciones</a></li>
-            <li><a href="#contact">Contáctanos</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+  <div class="container">
+    <div class="logo">
+      <img src="./images/Logo/logo.jpg" alt="Logo Cap Fruto de Vida">
+    </div>
+
+    <!-- Botón tipo hamburguesa -->
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" style="color: #000;">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Menú principal -->
+    <nav id="navMenu" class="nav-menu">
+      <ul>
+        <li><a href="#about">Sobre Nosotros</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#donaciones">Donaciones</a></li>
+        <li><a href="#contact">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
     <!-- SECCIONES -->
     <main>
@@ -120,15 +127,31 @@
       </section>
 
       <section id="gallery" class="section">
-        <h2>Galería</h2>
-        <div class="gallery">
-          <img
-            src="images/Eventos/438303786_122142121568186305_436602175313537733_n.jpg"
-            alt="Evento 1"
-          />
-          <img src="images/Eventos/parejas.jpg" alt="Evento 2" />
-        </div>
-      </section>
+  <h2>Galería</h2>
+  <div class="gallery">
+    <img
+      src="images/Eventos/438303786_122142121568186305_436602175313537733_n.jpg"
+      alt="Evento 1 - Cap Fruto de Vida"
+    />
+    <img
+      src="images/Eventos/parejas.jpg"
+      alt="Evento 2 - Cap Fruto de Vida"
+    />
+  </div>
+
+  <!-- Modal para ampliar imagen -->
+  <div class="modal" id="modal">
+    <button
+      class="modal-close"
+      id="modalClose"
+      aria-label="Cerrar imagen"
+    >
+      &times;
+    </button>
+    <img id="modalImg" src="" alt="Imagen ampliada" />
+  </div>
+</section>
+
 
       <section id="donaciones" class="section alt">
         <h2>Donaciones</h2>
@@ -159,197 +182,199 @@
       <p>&copy; 2025 Cap Fruto de Vida. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- =========================
-       SCRIPT MEJORADO UX/UI
-  ========================= -->
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("navMenu");
-      hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        hamburger.classList.toggle("open");
+   <!-- =========================
+     MENÚ HAMBURGUESA
+========================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("active");
+      hamburger.classList.toggle("open");
+      hamburger.setAttribute("aria-expanded", isOpen);
+    });
+
+    // Cierra el menú al hacer clic en un enlace
+    document.querySelectorAll(".nav-menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", false);
       });
+    });
+  }
+});
+</script>
 
-      document.querySelectorAll("header nav a").forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const target = document.querySelector(link.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-            navMenu.classList.remove("active");
-            hamburger.classList.remove("open");
-          }
-        });
-      });
-    </script>
 
-    <!-- Script para donaciones -->
-    <script
-        const donationURL = "https://wa.me/573108797672?text=Deseo+realizar+una+donación+a+Cap+Fruto+de+Vida";
-        document.getElementById('qrCode').src =
-        `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(donationURL)}&choe=UTF-8`;
+<!-- =========================
+     SECCIÓN DONACIONES (QR + botón)
+========================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const donationURL = "https://wa.me/573108797672?text=Deseo+realizar+una+donación+a+Cap+Fruto+de+Vida";
+  const qr = document.getElementById("qrCode");
+  const donateBtn = document.getElementById("donateButton");
 
-        document.getElementById('donateButton').addEventListener('click', () => {
-        window.open(donationURL, '_blank');
-        });
-    </script>
+  if (qr) {
+    qr.src = `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(donationURL)}&choe=UTF-8`;
+  }
 
-    <!-- Script para el asesor virtual -->
+  if (donateBtn) {
+    donateBtn.addEventListener("click", () => {
+      window.open(donationURL, "_blank");
+    });
+  }
+});
+</script>
 
-    <script>
-      // =========================
-      // CONFIGURACIÓN PRINCIPAL
-      // =========================
 
-      const boton = document.querySelector(".asesor-btn");
-      const asesor = document.getElementById("asesorVirtual");
-      const mensajes = document.getElementById("mensajesAsesor");
-      const input = document.getElementById("inputAsesor");
-      const sonidoNotificacion = new Audio(
-        "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c4f4eae84e.mp3?filename=click-124467.mp3"
-      );
+<!-- =========================
+     ASESOR VIRTUAL - TABOCAP
+========================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const boton = document.querySelector(".asesor-btn");
+  const asesor = document.getElementById("asesorVirtual");
+  const mensajes = document.getElementById("mensajesAsesor");
+  const input = document.getElementById("inputAsesor");
+  const sonidoNotificacion = new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_c4f4eae84e.mp3?filename=click-124467.mp3");
 
-      // =========================
-      // APERTURA AUTOMÁTICA
-      // =========================
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          asesor.classList.add("activo");
-          agregarMensajeBot(
-            "👋 ¡Hola! Soy <strong>Tabocap</strong>, tu asesor virtual de <strong>Cap Fruto de Vida</strong> 💚"
-          );
-          agregarMensajeBot(
-            "¿En qué puedo ayudarte hoy? Aquí tienes las opciones disponibles:<br><br>1️⃣ Horarios de reuniones<br>2️⃣ Donaciones y apoyo<br>3️⃣ Ubicación<br>4️⃣ Peticiones de oración<br>5️⃣ Proyectos y cruzadas<br>6️⃣ Contacto<br>7️⃣ Redes sociales<br>8️⃣ Eventos y actividades"
-          );
-        }, 1500);
-      });
+  if (!asesor || !boton) return;
 
-      // =========================
-      // ABRIR / CERRAR ASESOR
-      // =========================
-      boton.addEventListener("click", () => {
-        asesor.classList.toggle("activo");
-        boton.classList.toggle("activo");
-        sonidoNotificacion.play();
-      });
+  // Apertura automática
+  setTimeout(() => {
+    asesor.classList.add("activo");
+    agregarMensajeBot("👋 ¡Hola! Soy <strong>Tabocap</strong>, tu asesor virtual de <strong>Cap Fruto de Vida</strong> 💚");
+    agregarMensajeBot("¿En qué puedo ayudarte hoy?<br><br>1️⃣ Horarios<br>2️⃣ Donaciones<br>3️⃣ Ubicación<br>4️⃣ Oración<br>5️⃣ Proyectos<br>6️⃣ Contacto<br>7️⃣ Redes sociales<br>8️⃣ Eventos");
+  }, 1500);
 
-      function cerrarAsesor() {
-        asesor.classList.remove("activo");
-        boton.classList.remove("activo");
-      }
+  // Toggle del chat
+  boton.addEventListener("click", () => {
+    asesor.classList.toggle("activo");
+    boton.classList.toggle("activo");
+    sonidoNotificacion.play();
+  });
 
-      // =========================
-      // ENVÍO DE MENSAJE
-      // =========================
-      function enviarMensaje() {
-        const texto = input.value.trim();
-        if (texto === "") return;
+  // Enviar mensaje
+  window.enviarMensaje = function() {
+    const texto = input.value.trim();
+    if (!texto) return;
 
-        const msgUsuario = document.createElement("div");
-        msgUsuario.className = "mensaje usuario";
-        msgUsuario.textContent = texto;
-        mensajes.appendChild(msgUsuario);
-        mensajes.scrollTop = mensajes.scrollHeight;
+    const msgUsuario = document.createElement("div");
+    msgUsuario.className = "mensaje usuario";
+    msgUsuario.textContent = texto;
+    mensajes.appendChild(msgUsuario);
+    mensajes.scrollTop = mensajes.scrollHeight;
+    input.value = "";
 
-        input.value = "";
-        mostrarIndicador();
-        setTimeout(() => procesarRespuesta(texto), 1000);
-      }
+    mostrarIndicador();
+    setTimeout(() => procesarRespuesta(texto), 1000);
+  };
 
-      // =========================
-      // PROCESAR RESPUESTAS AUTOMÁTICAS
-      // =========================
-      function procesarRespuesta(texto) {
-        ocultarIndicador();
-        const t = texto.toLowerCase();
-        let respuesta = "";
+  function procesarRespuesta(texto) {
+    ocultarIndicador();
+    const t = texto.toLowerCase();
+    let respuesta = "";
 
-        if (t.includes("1") || t.includes("horario")) {
-          respuesta =
-            "🕒 Nuestros servicios son los domingos a las 10:00 a.m. y los miércoles a las 7:00 p.m. ¡Te esperamos!";
-        } else if (t.includes("2") || t.includes("donación")) {
-          respuesta =
-            "🙏 Puedes apoyar la obra en la sección <strong>‘Donaciones’</strong> o contactándonos directamente.";
-        } else if (
-          t.includes("3") ||
-          t.includes("ubicación") ||
-          t.includes("dónde")
-        ) {
-          respuesta =
-            "📍 Nos encontramos en Cartagena. Aquí puedes ver nuestra ubicación:<br><br><iframe src='https://www.google.com/maps/embed?pb=!4v1760019686804!6m8!1m7!1sEHa3CdPZtyExgXz7Z4Ok7g!2m2!1d10.39796204149916!2d-75.48262603249093!3f339.28!4f-9.04!5f1.9218592443597333' width='100%' height='200' style='border:0; border-radius:10px;' allowfullscreen='' loading='lazy'></iframe>";
-        } else if (t.includes("4") || t.includes("oración")) {
-          respuesta =
-            "🙏 Déjame tu nombre y motivo de oración, y nuestro equipo orará por ti con fe.";
-        } else if (
-          t.includes("5") ||
-          t.includes("proyecto") ||
-          t.includes("cruzada")
-        ) {
-          respuesta =
-            "🔥 Actualmente desarrollamos proyectos evangelísticos. Pronto los verás publicados aquí.";
-        } else if (
-          t.includes("6") ||
-          t.includes("contacto") ||
-          t.includes("teléfono")
-        ) {
-          respuesta =
-            "📞 Puedes comunicarte con nosotros al <strong>+57 310 8797672</strong>. ¡Será un placer atenderte!";
-        } else if (
-          t.includes("7") ||
-          t.includes("redes") ||
-          t.includes("facebook") ||
-          t.includes("instagram")
-        ) {
-          respuesta =
-            "🌐 Síguenos en nuestras redes:<br><br>📘 <a href='https://www.facebook.com/profile.php?id=61555589166212' target='_blank'>Facebook</a><br>📸 <a href='https://www.instagram.com/capfrutodevida/' target='_blank'>Instagram</a>";
-        } else if (t.includes("8") || t.includes("evento")) {
-          respuesta =
-            "📅 Próximamente compartiremos nuestros próximos eventos y actividades aquí.";
-        } else {
-          respuesta =
-            "🤖 No entendí muy bien, pero puedo ayudarte con:<br>1️⃣ Horarios<br>2️⃣ Donaciones<br>3️⃣ Ubicación<br>4️⃣ Oración<br>5️⃣ Proyectos<br>6️⃣ Contacto<br>7️⃣ Redes<br>8️⃣ Eventos";
-        }
+    if (t.includes("1") || t.includes("horario"))
+      respuesta = "🕒 Nuestros servicios son los domingos a las 10:00 a.m. y miércoles a las 7:00 p.m.";
+    else if (t.includes("2") || t.includes("donación"))
+      respuesta = "🙏 Puedes apoyar la obra en la sección <strong>‘Donaciones’</strong>.";
+    else if (t.includes("3") || t.includes("ubicación"))
+      respuesta = "📍 Nos encontramos en Cartagena. <a href='https://goo.gl/maps/' target='_blank'>Ver en mapa</a>";
+    else if (t.includes("4") || t.includes("oración"))
+      respuesta = "🙏 Déjame tu nombre y motivo de oración, y oraremos por ti con fe.";
+    else if (t.includes("5") || t.includes("proyecto"))
+      respuesta = "🔥 Actualmente desarrollamos proyectos evangelísticos.";
+    else if (t.includes("6") || t.includes("contacto"))
+      respuesta = "📞 Contáctanos al <strong>+57 310 8797672</strong>.";
+    else if (t.includes("7") || t.includes("redes"))
+      respuesta = "🌐 Síguenos:<br>📘 <a href='https://www.facebook.com/profile.php?id=61555589166212' target='_blank'>Facebook</a><br>📸 <a href='https://www.instagram.com/capfrutodevida/' target='_blank'>Instagram</a>";
+    else if (t.includes("8") || t.includes("evento"))
+      respuesta = "📅 Próximamente compartiremos nuestros próximos eventos.";
+    else
+      respuesta = "🤖 No entendí muy bien, pero puedo ayudarte con:<br>1️⃣ Horarios<br>2️⃣ Donaciones<br>3️⃣ Ubicación<br>4️⃣ Oración<br>5️⃣ Proyectos<br>6️⃣ Contacto<br>7️⃣ Redes<br>8️⃣ Eventos";
 
-        setTimeout(() => agregarMensajeBot(respuesta), 500);
-      }
+    setTimeout(() => agregarMensajeBot(respuesta), 500);
+  }
 
-      // =========================
-      // AGREGAR MENSAJES DEL BOT
-      // =========================
-      function agregarMensajeBot(texto) {
-        const msgBot = document.createElement("div");
-        msgBot.className = "mensaje bot";
-        msgBot.innerHTML = texto;
-        mensajes.appendChild(msgBot);
-        mensajes.scrollTop = mensajes.scrollHeight;
-        sonidoNotificacion.play();
-      }
+  function agregarMensajeBot(texto) {
+    const msgBot = document.createElement("div");
+    msgBot.className = "mensaje bot";
+    msgBot.innerHTML = texto;
+    mensajes.appendChild(msgBot);
+    mensajes.scrollTop = mensajes.scrollHeight;
+    sonidoNotificacion.play();
+  }
 
-      // =========================
-      // INDICADOR DE "ESCRIBIENDO..."
-      // =========================
-      function mostrarIndicador() {
-        const indicador = document.createElement("div");
-        indicador.className = "indicador";
-        indicador.textContent = "Tabocap está escribiendo...";
-        mensajes.appendChild(indicador);
-        mensajes.scrollTop = mensajes.scrollHeight;
-      }
+  function mostrarIndicador() {
+    const indicador = document.createElement("div");
+    indicador.className = "indicador";
+    indicador.textContent = "Tabocap está escribiendo...";
+    mensajes.appendChild(indicador);
+  }
 
-      function ocultarIndicador() {
-        const indicador = document.querySelector(".indicador");
-        if (indicador) indicador.remove();
-      }
-    </script>
+  function ocultarIndicador() {
+    const indicador = document.querySelector(".indicador");
+    if (indicador) indicador.remove();
+  }
+});
+</script>
 
-    <!-- Seccion video pie de pagina -->
-    <script>
+
+<!-- =========================
+     EFECTOS DE VIDEO Y SCROLL
+========================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
   const video = document.querySelector(".video-container video");
   const container = document.querySelector(".video-container");
+  const header = document.querySelector(".site-header");
 
-  video.addEventListener("play", () => container.classList.add("playing"));
-  video.addEventListener("pause", () => container.classList.remove("playing"));
+  if (video && container) {
+    video.addEventListener("play", () => container.classList.add("playing"));
+    video.addEventListener("pause", () => container.classList.remove("playing"));
+  }
+
+  // Efecto de scroll en header
+  window.addEventListener("scroll", () => {
+    if (header) header.classList.toggle("scrolled", window.scrollY > 30);
+  });
+});
 </script>
+
+
+<!-- =========================
+     GALERÍA INTERACTIVA
+========================= -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryImages = document.querySelectorAll(".gallery img");
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modalImg");
+  const modalClose = document.getElementById("modalClose");
+
+  if (galleryImages.length && modal && modalImg && modalClose) {
+    galleryImages.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.classList.add("open");
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+      });
+    });
+
+    modalClose.addEventListener("click", () => modal.classList.remove("open"));
+    modal.addEventListener("click", e => {
+      if (e.target === modal) modal.classList.remove("open");
+    });
+  }
+});
+</script>
+
 
   </body>
 </html>
