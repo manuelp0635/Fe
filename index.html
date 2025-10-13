@@ -1,392 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <!-- META -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cap Fruto de Vida | Cruzada Cristiana</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cap Fruto de Vida | Iglesia Cristiana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="shortcut icon" href="images/Logo/logo.jpg" type="image/x-icon">
+</head>
+<body>
 
-    <!-- DESCRIPCIÓN -->
-    <meta
-      name="description"
-      content="Ministerio cristiano Cap Fruto de Vida, compartiendo el mensaje de esperanza, fe y amor de Dios."
-    />
+  
+  <!-- ================================
+       HERO PRINCIPAL
+  ================================= -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>“El fruto del Espíritu es amor, gozo y paz”</h1>
+      <p>Gálatas 5:22 — Unidos en fe y propósito</p>
+      <a href="#ministerios" class="btn-primary">Conócenos</a>
+    </div>
+  </header>
 
-    <!-- FAVICON -->
-    <link rel="icon" href="./images/Logo/logo.jpg" type="image/x-icon" />
-
-    <!-- FUENTE Y ESTILOS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/estilos.css" />
-  </head>
-  <scr>
-    <!-- BOTÓN DEL ASESOR VIRTUAL -->
-    <button
-      class="asesor-btn"
-      onclick="toggleAsesor()"
-      title="Habla con Tabocap"
-    >
-      💬
-    </button>
-
-    <!-- CONTENEDOR DEL ASESOR -->
-    <div class="asesor" id="asesorVirtual">
-      <div class="asesor-header">
-        <div class="asesor-info">
-          <img
-            src="./images/Logo/Tabocap.jpg"
-            alt="Tabocap"
-            class="asesor-avatar"
-          />
-          <div>
-            <h4>Tabocap</h4>
-            <span>Asesor Virtual</span>
-          </div>
-        </div>
-        <button onclick="cerrarAsesor()" class="cerrar-btn">✖</button>
+  <!-- ================================
+       SECCIÓN MINISTERIOS
+  ================================= -->
+  <section id="ministerios" class="section">
+    <h2>Nuestros <b style="color:#007bff;">Ministerios</b></h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Alabanza</h3>
+        <p>Adoramos con pasión y excelencia para exaltar el nombre de Jesús.</p>
       </div>
-
-      <div class="asesor-mensajes" id="mensajesAsesor"></div>
-
-      <div class="asesor-input">
-        <input
-          id="inputAsesor"
-          type="text"
-          placeholder="Escribe tu mensaje..."
-        />
-        <button onclick="enviarMensaje()" class="enviar-btn">➤</button>
+      <div class="card">
+        <h3>Juventud</h3>
+        <p>Jóvenes encendidos por el Espíritu, marcando diferencia en su generación.</p>
+      </div>
+      <div class="card">
+        <h3>Niños</h3>
+        <p>Formando corazones según el propósito de Dios desde la infancia.</p>
       </div>
     </div>
+  </section>
 
-    <!-- ENCABEZADO -->
-    <header class="site-header">
-  <div class="container">
-    <div class="logo">
-      <img src="./images/Logo/logo.jpg" alt="Logo Cap Fruto de Vida">
+  <!-- ================================
+       SECCIÓN EVENTOS
+  ================================= -->
+  <section id="eventos" class="section bg-light">
+    <h2>Próximos <b style="color:#007bff;">Eventos</b></h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Vigilia de Oración</h3>
+        <p>Viernes 18 de octubre | 8:00 p.m.</p>
+      </div>
+      <div class="card">
+        <h3>Culto de Sanidad</h3>
+        <p>Domingo 20 de octubre | 9:00 a.m.</p>
+      </div>
+      <div class="card">
+        <h3>Escuela Bíblica</h3>
+        <p>Todos los miércoles | 7:00 p.m.</p>
+      </div>
     </div>
+  </section>
 
-    <!-- Botón tipo hamburguesa -->
-    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" style="color: #000;">
-      <span></span><span></span><span></span>
-    </button>
+  <!-- ================================
+       SECCIÓN PETICIÓN DE ORACIÓN
+================================= -->
+<section id="oracion" class="section oracion-section">
+  <div class="oracion-container">
+    <h2 class="oracion-title">
+      Petición de <b style="color:#007bff;">Oración</b>
+    </h2>
 
-    <!-- Menú principal -->
-    <nav id="navMenu" class="nav-menu">
-      <ul>
-        <li><a href="#about">Sobre Nosotros</a></li>
-        <li><a href="#services">Servicios</a></li>
-        <li><a href="#gallery">Galería</a></li>
-        <li><a href="#donaciones">Donaciones</a></li>
-        <li><a href="#contact">Contáctanos</a></li>
+    <p class="oracion-subtitle">
+      Creemos en el poder de la oración 🙏<br>
+      Comparte con nosotros tu petición, queremos orar contigo.
+    </p>
+
+    <form class="oracion-form" id="oracionForm">
+      <div class="input-group">
+        <input type="text" placeholder="✏️ Tu nombre completo" required />
+      </div>
+      <div class="input-group">
+        <input type="email" placeholder="📧 Tu correo electrónico" required />
+      </div>
+      <div class="input-group">
+        <textarea placeholder="🕊️ Escribe aquí tu petición..." rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn-enviar">💌 Enviar Petición</button>
+
+      <p class="mensaje-gracias" id="mensajeGracias">
+        ¡Gracias por confiar en nosotros! 🙌<br>Nos uniremos en oración contigo.
+      </p>
+    </form>
+  </div>
+</section>
+
+
+  <!-- ================================
+       SECCIÓN: TESTIMONIOS DE FE
+  ================================= -->
+  <section id="gallery" class="section testimonios-section">
+    <h2>Testimonios de <b style="color:#007bff;">FE</b></h2>
+
+    <div class="carousel-container">
+      <ul class="carousel-track">
+        <li class="carousel-slide"><img src="./images/Testimonios/1.jpg" alt="Evento 1 - Cap Fruto de Vida" class="carousel-image" /></li>
+        <li class="carousel-slide"><img src="./images/Testimonios/2.jpg" alt="Evento 2 - Cap Fruto de Vida" class="carousel-image" /></li>
+        <li class="carousel-slide"><img src="./images/Testimonios/3.jpg" alt="Evento 3 - Cap Fruto de Vida" class="carousel-image" /></li>
+        <li class="carousel-slide"><img src="./images/Testimonios/4.jpg" alt="Evento 4 - Cap Fruto de Vida" class="carousel-image" /></li>
+        <li class="carousel-slide"><img src="./images/Testimonios/5.jpg" alt="Evento 5 - Cap Fruto de Vida" class="carousel-image" /></li>
+        <li class="carousel-slide"><img src="./images/Testimonios/6.jpg" alt="Evento 6 - Cap Fruto de Vida" class="carousel-image" /></li>
+        <li class="carousel-slide"><img src="./images/Testimonios/7.jpg" alt="Evento 7 - Cap Fruto de Vida" class="carousel-image" /></li>
       </ul>
-    </nav>
-  </div>
-</header>
+    </div>
 
+    <div class="carousel-dots"></div>
+  </section>
 
-    <!-- SECCIONES -->
-    <main>
-      <section class="hero">
-        <h1>Cap Fruto de Vida</h1>
-        <p>
-          🙌 Próximamente grandes cosas están por venir. ¡Dios tiene el control!
-        </p>
-      </section>
+  <!-- ================================
+       FOOTER
+  ================================= -->
+  <footer class="footer">
+    <p>© 2025 Cap Fruto de Vida | Cartagena</p>
+    <a href="https://wa.me/57XXXXXXXXXX" target="_blank" class="btn-whatsapp">WhatsApp</a>
+  </footer>
 
-      <section id="about" class="section">
-        <h2>Sobre Nosotros</h2>
-        <p>
-          Cap Fruto de Vida es un ministerio basado en el <b>amor</b>,
-          <b>servicio</b> y <b>unidad en Cristo</b>.
-        </p>
-      </section>
+  <!-- ================================
+     ASESOR VIRTUAL TABOCAP (OPTIMIZADO UX/UI)
+================================ -->
+<div class="chatbot-container">
+  <input type="checkbox" id="toggleChat" class="toggle-chat" />
 
-      <section id="services" class="section alt">
-        <h2>Servicios</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <h3>Reuniones</h3>
-            <p><b>Viernes:</b> Sobrenatural 7:00 pm</p>
-            <p><b>Sábado:</b> Jóvenes 6:00 pm</p>
-            <p><b>Domingo:</b> Familia Unidad 9:00 am</p>
-          </div>
-          <div class="service-card">
-            <h3>Transmisiones</h3>
-            <p>🎥 Muy pronto comenzaremos nuestras transmisiones en vivo.</p>
-          </div>
-          <div class="service-card">
-            <h3>Estudio Bíblico</h3>
-            <p>📖 Profundiza en la palabra con nosotros cada semana.</p>
-          </div>
+  <!-- Botón flotante -->
+  <label for="toggleChat" class="chatbot-btn" title="Habla con Tabocap">
+    💬
+  </label>
+
+  <!-- Ventana del chat -->
+  <div class="chatbot-box" aria-live="polite">
+    <div class="chatbot-header">
+      <div class="chatbot-header-info">
+        <div class="chatbot-avatar-wrapper">
+          <img src="images/Logo/Tabocap.jpg" alt="Asesor Tabocap" class="chatbot-avatar" id="tabocapAvatar" />
+          <span class="wave-hand">👋</span>
         </div>
-      </section>
-
-      <section id="gallery" class="section">
-  <h2>Galería</h2>
-  <div class="gallery">
-    <img
-      src="images/Eventos/438303786_122142121568186305_436602175313537733_n.jpg"
-      alt="Evento 1 - Cap Fruto de Vida"
-    />
-    <img
-      src="images/Eventos/parejas.jpg"
-      alt="Evento 2 - Cap Fruto de Vida"
-    />
-  </div>
-
-  <!-- Modal para ampliar imagen -->
-  <div class="modal" id="modal">
-    <button
-      class="modal-close"
-      id="modalClose"
-      aria-label="Cerrar imagen"
-    >
-      &times;
-    </button>
-    <img id="modalImg" src="" alt="Imagen ampliada" />
-  </div>
-</section>
-
-
-      <section id="donaciones" class="section alt">
-        <h2>Donaciones</h2>
-        <p>
-          Tu generosidad nos permite seguir compartiendo el mensaje de fe y
-          amor. 💖
-        </p>
-        <div class="donations">
-          <img id="qrCode" src="" alt="Código QR Nequi" class="qr-image" />
-          <p>
-            <strong>Escanea con Nequi</strong> 📱<br />Cuenta a nombre de
-            <b>Cap Fruto de Vida</b>
-          </p>
-          <p>Número de cuenta: <b>310 8797672</b></p>
-          <button id="donateButton" class="btn-primary">Donar con Nequi</button>
+        <div>
+          <h3>Tabocap</h3>
+          <p>Asesor Virtual Cap Fruto de Vida</p>
         </div>
-      </section>
+      </div>
+      <label for="toggleChat" class="close-chat" title="Cerrar chat">&times;</label>
+    </div>
 
-      <section id="contact" class="section centered-section">
-  <h2>Fortalecidos en el <b>Espíritu</b></h2>
-  <div class="video-container">
-    <video
-      controls
-      autoplay
-      muted
-      loop
-      playsinline
-      width="600"
-      class="responsive-video"
-    >
-      <source src="./images/videos/FDownloader.Net_AQNSSFe2-ZzSxK7dAIJ7K2Y0j3C4HgrWb2YqMwBCpguq-2Gz6o1tVbhyzmr1YQmAGdjdMSLwvqh8z2dHRxInj2M0BIFQOsVb91q9MRo_720p_(HD).mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de videos.
-    </video>
+    <div class="chatbot-messages" id="chatMessages">
+      <div class="bot-message fade-in">
+        👋 <b id="greeting"></b> Soy <b>Tabocap</b>, tu asesor virtual de <b>Cap Fruto de Vida</b> 🙏<br>
+        ¿En qué puedo ayudarte hoy?
+      </div>
+      <div class="bot-options">
+        <button onclick="sendQuick('Horarios de servicios')">🕐 Horarios de servicios</button>
+        <button onclick="sendQuick('Cómo llegar')">📍 Cómo llegar</button>
+        <button onclick="sendQuick('Petición de oración')">🙏 Petición de oración</button>
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input id="userInput" type="text" placeholder="Escribe tu mensaje..." aria-label="Campo de mensaje" />
+      <button onclick="sendMessage()" title="Enviar mensaje">➤</button>
+    </div>
   </div>
-</section>
-
-    </main>
-
-    <footer>
-      <p>&copy; 2025 Cap Fruto de Vida. Todos los derechos reservados.</p>
-    </footer>
-
-   <!-- =========================
-     MENÚ HAMBURGUESA
-========================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.getElementById("navMenu");
-
-  if (hamburger && navMenu) {
-    hamburger.addEventListener("click", () => {
-      const isOpen = navMenu.classList.toggle("active");
-      hamburger.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", isOpen);
-    });
-
-    // Cierra el menú al hacer clic en un enlace
-    document.querySelectorAll(".nav-menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("active");
-        hamburger.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", false);
-      });
-    });
-  }
-});
-</script>
+</div>
 
 
-<!-- =========================
-     SECCIÓN DONACIONES (QR + botón)
-========================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const donationURL = "https://wa.me/573108797672?text=Deseo+realizar+una+donación+a+Cap+Fruto+de+Vida";
-  const qr = document.getElementById("qrCode");
-  const donateBtn = document.getElementById("donateButton");
 
-  if (qr) {
-    qr.src = `https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=${encodeURIComponent(donationURL)}&choe=UTF-8`;
-  }
-
-  if (donateBtn) {
-    donateBtn.addEventListener("click", () => {
-      window.open(donationURL, "_blank");
-    });
-  }
-});
-</script>
-
-
-<!-- =========================
-     ASESOR VIRTUAL - TABOCAP
-========================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const boton = document.querySelector(".asesor-btn");
-  const asesor = document.getElementById("asesorVirtual");
-  const mensajes = document.getElementById("mensajesAsesor");
-  const input = document.getElementById("inputAsesor");
-  const sonidoNotificacion = new Audio("https://cdn.pixabay.com/download/audio/2022/03/15/audio_c4f4eae84e.mp3?filename=click-124467.mp3");
-
-  if (!asesor || !boton) return;
-
-  // Apertura automática
-  setTimeout(() => {
-    asesor.classList.add("activo");
-    agregarMensajeBot("👋 ¡Hola! Soy <strong>Tabocap</strong>, tu asesor virtual de <strong>Cap Fruto de Vida</strong> 💚");
-    agregarMensajeBot("¿En qué puedo ayudarte hoy?<br><br>1️⃣ Horarios<br>2️⃣ Donaciones<br>3️⃣ Ubicación<br>4️⃣ Oración<br>5️⃣ Proyectos<br>6️⃣ Contacto<br>7️⃣ Redes sociales<br>8️⃣ Eventos");
-  }, 1500);
-
-  // Toggle del chat
-  boton.addEventListener("click", () => {
-    asesor.classList.toggle("activo");
-    boton.classList.toggle("activo");
-    sonidoNotificacion.play();
-  });
-
-  // Enviar mensaje
-  window.enviarMensaje = function() {
-    const texto = input.value.trim();
-    if (!texto) return;
-
-    const msgUsuario = document.createElement("div");
-    msgUsuario.className = "mensaje usuario";
-    msgUsuario.textContent = texto;
-    mensajes.appendChild(msgUsuario);
-    mensajes.scrollTop = mensajes.scrollHeight;
-    input.value = "";
-
-    mostrarIndicador();
-    setTimeout(() => procesarRespuesta(texto), 1000);
-  };
-
-  function procesarRespuesta(texto) {
-    ocultarIndicador();
-    const t = texto.toLowerCase();
-    let respuesta = "";
-
-    if (t.includes("1") || t.includes("horario"))
-      respuesta = "🕒 Nuestros servicios son los domingos a las 10:00 a.m. y miércoles a las 7:00 p.m.";
-    else if (t.includes("2") || t.includes("donación"))
-      respuesta = "🙏 Puedes apoyar la obra en la sección <strong>‘Donaciones’</strong>.";
-    else if (t.includes("3") || t.includes("ubicación"))
-      respuesta = "📍 Nos encontramos en Cartagena. <a href='https://goo.gl/maps/' target='_blank'>Ver en mapa</a>";
-    else if (t.includes("4") || t.includes("oración"))
-      respuesta = "🙏 Déjame tu nombre y motivo de oración, y oraremos por ti con fe.";
-    else if (t.includes("5") || t.includes("proyecto"))
-      respuesta = "🔥 Actualmente desarrollamos proyectos evangelísticos.";
-    else if (t.includes("6") || t.includes("contacto"))
-      respuesta = "📞 Contáctanos al <strong>+57 310 8797672</strong>.";
-    else if (t.includes("7") || t.includes("redes"))
-      respuesta = "🌐 Síguenos:<br>📘 <a href='https://www.facebook.com/profile.php?id=61555589166212' target='_blank'>Facebook</a><br>📸 <a href='https://www.instagram.com/capfrutodevida/' target='_blank'>Instagram</a>";
-    else if (t.includes("8") || t.includes("evento"))
-      respuesta = "📅 Próximamente compartiremos nuestros próximos eventos.";
-    else
-      respuesta = "🤖 No entendí muy bien, pero puedo ayudarte con:<br>1️⃣ Horarios<br>2️⃣ Donaciones<br>3️⃣ Ubicación<br>4️⃣ Oración<br>5️⃣ Proyectos<br>6️⃣ Contacto<br>7️⃣ Redes<br>8️⃣ Eventos";
-
-    setTimeout(() => agregarMensajeBot(respuesta), 500);
-  }
-
-  function agregarMensajeBot(texto) {
-    const msgBot = document.createElement("div");
-    msgBot.className = "mensaje bot";
-    msgBot.innerHTML = texto;
-    mensajes.appendChild(msgBot);
-    mensajes.scrollTop = mensajes.scrollHeight;
-    sonidoNotificacion.play();
-  }
-
-  function mostrarIndicador() {
-    const indicador = document.createElement("div");
-    indicador.className = "indicador";
-    indicador.textContent = "Tabocap está escribiendo...";
-    mensajes.appendChild(indicador);
-  }
-
-  function ocultarIndicador() {
-    const indicador = document.querySelector(".indicador");
-    if (indicador) indicador.remove();
-  }
-});
-</script>
-
-
-<!-- =========================
-     EFECTOS DE VIDEO Y SCROLL
-========================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const video = document.querySelector(".video-container video");
-  const container = document.querySelector(".video-container");
-  const header = document.querySelector(".site-header");
-
-  if (video && container) {
-    video.addEventListener("play", () => container.classList.add("playing"));
-    video.addEventListener("pause", () => container.classList.remove("playing"));
-  }
-
-  // Efecto de scroll en header
-  window.addEventListener("scroll", () => {
-    if (header) header.classList.toggle("scrolled", window.scrollY > 30);
-  });
-});
-</script>
-
-
-<!-- =========================
-     GALERÍA INTERACTIVA
-========================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const galleryImages = document.querySelectorAll(".gallery img");
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modalImg");
-  const modalClose = document.getElementById("modalClose");
-
-  if (galleryImages.length && modal && modalImg && modalClose) {
-    galleryImages.forEach(img => {
-      img.addEventListener("click", () => {
-        modal.classList.add("open");
-        modalImg.src = img.src;
-        modalImg.alt = img.alt;
-      });
-    });
-
-    modalClose.addEventListener("click", () => modal.classList.remove("open"));
-    modal.addEventListener("click", e => {
-      if (e.target === modal) modal.classList.remove("open");
-    });
-  }
-});
-</script>
-
-
-  </body>
+  <script src="js/script.js"></script>
+</body>
 </html>
