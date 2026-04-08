@@ -387,6 +387,69 @@
 
     <script src="js/script.js"></script>
 
+    <!-- asesor virtual -->
+<script>
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const text = input.value.trim();
+  if (!text) return;
+
+  addMessage(text, "user");
+  input.value = "";
+
+  handleBotResponse(text);
+}
+
+function sendQuick(text) {
+  addMessage(text, "user");
+  handleBotResponse(text);
+}
+
+function handleBotResponse(text) {
+  let response = "";
+
+  const msg = text.toLowerCase();
+
+  if (msg.includes("horarios")) {
+    response = `
+🕐 <b>Horarios de Servicios</b><br><br>
+📅 Viernes: 7:00 pm - 9:00 pm<br>
+🔥 Sábados (Jóvenes): 6:00 pm - 8:00 pm<br>
+⛪ Domingo: 9:00 am - 11:30 am
+    `;
+  }
+
+  else if (msg.includes("llegar")) {
+    response = "📍 Puedes encontrarnos en nuestra ubicación. Escríbenos para enviarte la dirección exacta.";
+  }
+
+  else if (msg.includes("oración")) {
+    response = "🙏 Puedes enviarnos tu petición en la sección de oración y estaremos orando por ti.";
+  }
+
+  else {
+    response = "😊 Estoy aquí para ayudarte. Puedes preguntarme por horarios, ubicación o peticiones.";
+  }
+
+  setTimeout(() => {
+    addMessage(response, "bot");
+  }, 500);
+}
+
+function addMessage(text, sender) {
+  const container = document.getElementById("chatMessages");
+
+  const div = document.createElement("div");
+  div.className = sender === "user" ? "user-message" : "bot-message";
+  div.innerHTML = text;
+
+  container.appendChild(div);
+  container.scrollTop = container.scrollHeight;
+}
+</script>
+
+<!-- asesor virtual -->
+
      <!-- Scritp Peticiones de Oración -->
 <script>
 document.getElementById("oracionForm").addEventListener("submit", function(e){
@@ -432,5 +495,6 @@ document.getElementById("oracionForm").addEventListener("submit", function(e){
       /* AUTO */
       setInterval(moverMinisterios, 3000);
     </script>-->
+
   </body>
 </html>
