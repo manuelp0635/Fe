@@ -271,6 +271,26 @@ p { line-height: 1.6; }
               url('images/iglesia.jpg') center/cover no-repeat;
 }
 
+/* CONTENEDOR */
+.ministerios-carousel {
+  overflow: hidden;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+/* TRACK */
+.ministerios-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+/* CARDS */
+.ministerios-track .card {
+  min-width: 280px;
+  flex: 0 0 auto;
+  text-align: center;
+}
 
 /* ============================
    CARRUSEL TESTIMONIOS
