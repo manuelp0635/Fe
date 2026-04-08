@@ -420,8 +420,15 @@ function handleBotResponse(text) {
   }
 
   else if (msg.includes("llegar")) {
-    response = "📍 Puedes encontrarnos en nuestra ubicación. Escríbenos para enviarte la dirección exacta.";
-  }
+  response = `
+📍 <b>Cómo llegar</b><br><br>
+Puedes ver nuestra ubicación aquí 👇<br><br>
+
+<a href="https://www.google.com/local/place/fid/0x8ef62500638c24e1:0xed50feedb8225d13/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3D3ED1MVr2FXwFzPUe0W1Mfg%26cb_client%3Dlu.gallery.gps%26w%3D160%26h%3D106%26yaw%3D141.30257%26pitch%3D0%26thumbfov%3D100&ik=CAISFjNFRDFNVnIyRlh3RnpQVWUwVzFNZmc%3D" target="_blank">
+👉 Ver ubicación en Google Maps
+</a>
+  `;
+}
 
   else if (msg.includes("oración")) {
     response = "🙏 Puedes enviarnos tu petición en la sección de oración y estaremos orando por ti.";
