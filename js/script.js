@@ -106,10 +106,10 @@ function sendMessage() {
   setTimeout(() => {
     if (message.toLowerCase().includes("horario")) {
       botMsg.innerHTML =
-        "🕐 Nuestros servicios:<br>• Domingo 9:00 a.m.<br>• Miércoles 7:00 p.m.";
+        "🕐 Nuestros servicios:<br>• Viernes 7:00 - 9:00 p.m.<br>• Sabado (Jovenes) 6:00 - 7:00 p.m. <br>• Domingo 9:00 - 11:00 a.m.";
     } else if (message.toLowerCase().includes("llegar")) {
       botMsg.innerHTML =
-        "📍 Estamos en Cartagena, barrio El Bosque. ¡Te esperamos con gozo en el Señor!";
+        "📍 Estamos en Cartagena, barrio los alpes diagonal AREA 71 <b> CAP FRUTO DE VIDA </b>. ¡Te esperamos con gozo en el Señor!";
     } else if (message.toLowerCase().includes("oración")) {
       botMsg.innerHTML =
         "🙏 Puedes dejar tu petición aquí. Nuestro equipo orará contigo y por ti.";
