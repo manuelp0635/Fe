@@ -21,15 +21,42 @@
   </head>
   <body>
     <!-- ================================
-       HERO PRINCIPAL
-  ================================= -->
-    <header class="hero">
-      <div class="hero-content">
-        <h1>REMA 2026</h1>
-        <p><b>SEMBRANDO Y COSECHANDO JUNTOS</b></p>
-        <a href="#ministerios" class="btn-primary">Conócenos</a>
-      </div>
-    </header>
+       HERO CON VIDEO CARRUSEL
+================================= -->
+<section class="video-carousel" id="inicio">
+  <div class="video-wrapper">
+
+    <!-- TEXTO SUPERPUESTO -->
+    <div class="video-overlay">
+      <h1>REMA <span>2026</span></h1>
+      <p><b>Sembrando y cosechando juntos</b></p>
+      <a href="#ministerios" class="btn-primary">Conócenos</a>
+    </div>
+
+    <!-- VIDEOS -->
+    <video class="carousel-video active"
+  src="/videos/capfrutodevida.mp4"
+  muted
+  autoplay
+  loop
+  playsinline>
+</video>
+    <video class="carousel-video active"
+  src="/videos/pastores.mp4"
+  muted
+  autoplay
+  loop
+  playsinline>
+</video>
+<video class="carousel-video active"
+  src="/videos/primicias.mp4"
+  muted
+  autoplay
+  loop
+  playsinline>
+</video>
+  </div>
+</section>
 
     <!-- ================================
        SECCIÓN MINISTERIOS
@@ -502,6 +529,23 @@
 
       scanner.render(onScanSuccess, onScanError);
     </script>
+
+    <!-- ===========================
+     HERO TEXTO + VIDEOS
+    ============================= -->
+
+    <script>
+  const videos = document.querySelectorAll(".carousel-video");
+  let current = 0;
+
+  function changeVideo() {
+    videos[current].classList.remove("active");
+    current = (current + 1) % videos.length;
+    videos[current].classList.add("active");
+  }
+
+  setInterval(changeVideo, 5000); // cambia cada 5 segundos
+</script>
 
     <!-- ============================
      SCRIPT NUESTROS EVENTOS
