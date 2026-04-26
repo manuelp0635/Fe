@@ -1,0 +1,1292 @@
+/* ============================
+   ESTILOS GENERALES
+============================ */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #222;
+  background: #ffffff;
+}
+
+/* =====================
+        HEADER
+==================== */
+
+/* RESET */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  max-width: 250px;
+  line-height: 1.2;
+}
+
+/* ================================
+   NAVBAR
+================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 15px 20px;
+  transition: 0.3s;
+}
+
+/* EFECTO SCROLL */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+/* CONTENEDOR CENTRADO */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 0.9rem; /* más pequeño */
+  line-height: 1.2;
+}
+
+.logo b {
+  color: #007bff;
+}
+
+/* MENÚ */
+.nav-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: #007bff;
+}
+
+/* HAMBURGUESA */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background: #fff;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  display: block;
+  transition: 0.3s;
+}
+
+/* ANIMACIÓN A "X" */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================================
+   TABLET
+================================= */
+@media (max-width: 992px) {
+  .nav-container {
+    max-width: 90%;
+  }
+}
+
+/* ================================
+   MÓVIL
+================================= */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+
+    background: #000;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+    padding: 25px 0;
+
+    display: none;
+    text-align: center;
+  }
+
+  .nav-menu.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+/* ================================
+   ANIMACIÓN
+================================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   ESPACIADO SECCIONES
+================================= */
+.section {
+  padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 0.95rem;
+  }
+}
+
+/* Fin */
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+p { line-height: 1.6; }
+
+.btn-primary {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* HERO VIDEO */
+.video-carousel {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* VIDEOS */
+.carousel-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-video.active {
+  opacity: 1;
+}
+
+/* OVERLAY OSCURO */
+.video-carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+/* TEXTO */
+.video-overlay {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.video-overlay h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.video-overlay span {
+  color: #007bff;
+}
+
+.video-overlay p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* BOTÓN */
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .video-overlay h1 {
+    font-size: 35px;
+  }
+
+  .video-overlay p {
+    font-size: 14px;
+  }
+}
+
+/* CONTENEDOR PRINCIPAL */
+.video-carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* clave para que no se desborde */
+}
+
+/* WRAPPER */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* VIDEO */
+.carousel-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantiene proporción sin deformar */
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* VIDEO ACTIVO */
+.carousel-video.active {
+  opacity: 1;
+}
+
+/* OVERLAY (oscurecer fondo) */
+.video-carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+/* TEXTO */
+.video-overlay {
+  position: absolute;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .video-carousel {
+    height: 70vh; /* reduce altura en móviles */
+  }
+}
+
+.video-carousel::after {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.3)
+  );
+}
+
+/* ============================
+   GRID (Ministerios/Eventos)
+============================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover { transform: translateY(-5px); }
+
+.bg-light { background: #f8f9fa; }
+
+/* ===============================
+  SECCION: UBICACION
+=========================== */
+/* BOTONES */
+.map-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-waze {
+  background: #33ccff;
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-waze:hover {
+  background: #00b8e6;
+}
+
+/* HORARIO */
+.horario {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.contador {
+  margin-top: 5px;
+  font-size: 14px;
+  /*color: #ccc;*/
+}
+
+.btn-calendar {
+  background: #28a745;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn-calendar:hover {
+  background: #1e7e34;
+}
+
+/* ================================
+   SECCIÓN: PETICIÓN DE ORACIÓN
+================================ */
+.oracion-section {
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.oracion-container {
+  max-width: 600px;
+  width: 100%;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.oracion-container:hover {
+  transform: translateY(-5px);
+}
+
+.oracion-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.oracion-subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.oracion-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.8px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fafafa;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #007bff;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.15);
+  outline: none;
+}
+
+.btn-enviar {
+  background: #007bff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-enviar:hover {
+  background: #0056cc;
+  transform: scale(1.03);
+}
+
+.mensaje-gracias {
+  display: none;
+  margin-top: 20px;
+  color: #007bff;
+  font-weight: 500;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 600px) {
+  .oracion-container {
+    padding: 30px 20px;
+  }
+  .oracion-title {
+    font-size: 1.6rem;
+  }
+  .oracion-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+/* SECCIÓN */
+.porque {
+  padding: 80px 20px;
+  text-align: center;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+/* TITULO */
+.porque h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.sub {
+  /*color: #aaa;*/
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.porque-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CARDS */
+.porque-card {
+  background: #1a1a1a;
+  padding: 30px 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+  border: 1px solid #222;
+}
+
+/* ICONOS */
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* TEXTO */
+.porque-card h3 {
+  margin-bottom: 10px;
+}
+
+.porque-card p {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+/* HOVER */
+.porque-card:hover {
+  transform: translateY(-8px);
+  border: 1px solid #7b2cff;
+  box-shadow: 0 10px 30px rgba(123,44,255,0.3);
+}
+
+@media (max-width: 768px) {
+
+  .porque h2 {
+    font-size: 2rem;
+  }
+
+  .porque {
+    padding: 60px 15px;
+  }
+
+}
+
+.porque {
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+              url('/videos/#capfrutodevida\ #jesussaves\ #foryou\ #cristoteama\ #jesusislord\ #jesuséocaminho\ #christianmusic\ #j.mp4') center/cover no-repeat;
+}
+
+/* CONTENEDOR */
+.ministerios-carousel {
+  overflow: hidden;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+/* TRACK */
+.ministerios-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+}
+
+/* CARDS */
+.ministerios-track .card {
+  min-width: 280px;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+/* ============================
+   CARRUSEL TESTIMONIOS
+============================ */
+.testimonios-section { background: #f8f9fa; }
+
+.carousel-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 1.2s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 380px;
+  object-fit: contain;
+  background: #fff;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.carousel-dots button {
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  cursor: pointer;
+}
+.carousel-dots button.active { background: #007bff; }
+
+/* ===========================
+    DONACIONES
+========================== */
+/* SECCIÓN DONACIONES - FONDO NEGRO */
+body {
+  overflow-x: hidden;
+}
+
+.donation-section {
+  padding: 60px 20px;
+  background: #0d0d0d;
+  color: #fff;
+  text-align: center;
+}
+
+.donation-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.donation-section .sub {
+  /*color: #bbb;*/
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+/* GRID */
+.donacion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* CARDS */
+.donacion-card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.donacion-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+
+.donacion-card .icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.donacion-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.donacion-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* QR */
+.qr-section {
+  margin-top: 50px;
+}
+
+.qr-section h3 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* CONTENEDOR QR */
+.qr {
+  width: 100%;
+  max-width: 320px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #111;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* IMAGEN QR */
+.qr img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+/* TEXTO */
+.qr p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ccc;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .qr {
+    max-width: 260px;
+    padding: 15px;
+  }
+
+  .qr img {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .qr {
+    max-width: 90%;
+  }
+
+  .qr img {
+    max-width: 100%;
+  }
+
+  .qr p {
+    font-size: 13px;
+  }
+}
+
+#reader {
+  width: 260px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid #007bff;
+}
+
+#qr-result {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00aaff;
+}
+
+/* INFO */
+.donacion-info {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .donation-section h2 {
+    font-size: 24px;
+  }
+
+  .donacion-card {
+    padding: 20px;
+  }
+
+  #reader {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* ==========================
+    CARRUSEL EVENTOS
+====================== */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  text-align: center;
+  background: #111;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* BOTONES */
+.nav {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .carousel-item img {
+    height: 180px;
+  }
+}
+
+/* ============================
+   FOOTER
+============================ */
+.footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+}
+
+.footer p {
+  margin: 5px 0;
+  color: #aaa;
+}
+
+.redes {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.redes a {
+  color: #00c2ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.redes a:hover {
+  color: #fff;
+}
+
+.copy {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.redes a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #00c2ff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.redes a i {
+  font-size: 1.4rem;
+}
+
+.redes a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.fa-whatsapp { color: #25D366; }
+.fa-instagram { color: #E4405F; }
+.fa-youtube { color: #FF0000; }
+.fa-facebook { color: #1877F2; }
+
+
+/* ============================
+   ASESOR VIRTUAL TABOCAP (OPTIMIZADO)
+============================ */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 3000;
+}
+
+/* Ocultar checkbox controlador */
+.toggle-chat {
+  display: none;
+}
+
+/* Botón flotante */
+.chatbot-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.chatbot-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Ventana del chat */
+.chatbot-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 330px;
+  max-height: 480px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-in-out;
+}
+
+/* Mostrar chat cuando el toggle está activado */
+.toggle-chat:checked ~ .chatbot-box {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Encabezado */
+.chatbot-header {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chatbot-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.chatbot-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+.chatbot-header h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+.chatbot-header p {
+  margin: 0;
+  font-size: 0.75rem;
+  opacity: 0.9;
+}
+.close-chat {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.close-chat:hover {
+  transform: scale(1.2);
+}
+
+/* Mensajes */
+.chatbot-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+.bot-message,
+.user-message {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  line-height: 1.4;
+}
+.bot-message {
+  background: #f1f1f1;
+  align-self: flex-start;
+}
+.user-message {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+}
+
+/* Botones rápidos */
+.bot-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.bot-options button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 7px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.bot-options button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Entrada */
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  background: #fafafa;
+}
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  outline: none;
+  font-size: 0.95rem;
+}
+.chat-input button {
+  background: #007bff;
+  border: none;
+  color: white;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background 0.3s;
+}
+.chat-input button:hover {
+  background: #0056b3;
+}
+
+/* Animación */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-box {
+    width: 92%;
+    right: 4%;
+    bottom: 80px;
+  }
+}
+
+/* =============================
+   ANIMACIÓN DE SALUDO TABOCAP
+============================= */
+.chatbot-avatar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.wave-hand {
+  position: absolute;
+  right: -18px;
+  bottom: 5px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform-origin: bottom right;
+}
+
+.wave-hand.animate {
+  animation: waveMotion 1s ease-in-out 2;
+  opacity: 1;
+}
+
+@keyframes waveMotion {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  50% { transform: rotate(-15deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Suave rebote del avatar */
+.chatbot-avatar.bounce {
+  animation: bounceIn 0.8s ease;
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* ================================
+   AJUSTES RESPONSIVOS GENERALES
+================================ */
+
+/* 📱 Teléfonos pequeños */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .btn-primary {
+    padding: 10px 22px;
+    font-size: 0.9rem;
+  }
+  .carousel-container {
+    height: 220px;
+  }
+  .carousel-image {
+    border-radius: 12px;
+  }
+  .oracion-form input,
+  .oracion-form textarea {
+    font-size: 0.9rem;
+  }
+  .asesor-container {
+    width: 90%;
+    bottom: 15px;
+    right: 5%;
+  }
+}
+
+/* 📱 Tablets y pantallas medianas */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero-content {
+    padding: 0 15px;
+  }
+  .carousel-container {
+    height: 300px;
+  }
+}
+
+/* 💻 Escritorios grandes */
+@media (min-width: 1200px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .carousel-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
