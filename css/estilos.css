@@ -19,12 +19,138 @@ body {
   scroll-behavior: smooth;
 }
 
-.logo {
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: bold;
-  max-width: 250px;
-  line-height: 1.2;
+/* =========================
+   LOGO COMPACTO
+========================= */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  max-width:260px;
+  width:100%;
+
+  overflow:hidden;
+}
+
+/* =========================
+   IMAGEN
+========================= */
+.logo-img{
+  width:58px;
+  height:58px;
+
+  object-fit:contain;
+
+  flex-shrink:0;
+
+  border-radius:10px;
+
+  display:block;
+}
+
+/* =========================
+   TEXTO
+========================= */
+.logo-text{
+  display:flex;
+  flex-direction:column;
+
+  line-height:1;
+
+  overflow:hidden;
+}
+
+/* TEXTO SUPERIOR */
+.logo-title{
+  font-size:12px;
+  color:#ffffff;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* TEXTO PRINCIPAL */
+.logo-text strong{
+  font-size:18px;
+  color:#00bfff;
+  font-weight:700;
+
+  white-space:nowrap;
+}
+
+/* =========================
+   TABLETS
+========================= */
+@media screen and (max-width:768px){
+
+  .logo{
+    max-width:220px;
+    gap:8px;
+  }
+
+  .logo-img{
+    width:50px;
+    height:50px;
+  }
+
+  .logo-title{
+    font-size:11px;
+  }
+
+  .logo-text strong{
+    font-size:16px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media screen and (max-width:576px){
+
+  .logo{
+    max-width:190px;
+  }
+
+  .logo-img{
+    width:44px;
+    height:44px;
+  }
+
+  .logo-title{
+    font-size:10px;
+  }
+
+  .logo-text strong{
+    font-size:14px;
+  }
+
+}
+
+/* =========================
+   EXTRA SMALL
+========================= */
+@media screen and (max-width:400px){
+
+  .logo{
+    max-width:160px;
+  }
+
+  .logo-img{
+    width:40px;
+    height:40px;
+  }
+
+  .logo-title{
+    font-size:9px;
+  }
+
+  .logo-text strong{
+    font-size:13px;
+  }
+
 }
 
 /* ================================
