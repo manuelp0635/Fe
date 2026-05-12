@@ -510,6 +510,42 @@ p { line-height: 1.6; }
 
 .bg-light { background: #f8f9fa; }
 
+
+/* ===============================
+  CODIGO DE IMAGEN LOGO REFERENCIA
+=============================== */
+
+.logo-responsive{
+  width:100%;
+  max-width:1500px;
+  height:auto;
+  display:block;
+  margin:auto;
+  object-fit:cover;
+}
+
+/* TABLETS */
+@media (max-width:992px){
+  .logo-responsive{
+    max-width:1000px;
+  }
+}
+
+/* MÓVILES */
+@media (max-width:768px){
+  .logo-responsive{
+    max-width:100%;
+  }
+}
+
+/* MÓVILES PEQUEÑOS */
+@media (max-width:480px){
+  .logo-responsive{
+    width:100%;
+    border-radius:12px;
+  }
+}
+
 /* ===============================
   SECCION: UBICACION
 =========================== */
