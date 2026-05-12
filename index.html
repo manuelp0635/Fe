@@ -7,7 +7,7 @@
   <title>Cruzada Cristiana | Fruto de vida</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="/css/estilos.css" />
   <link rel="shortcut icon" href="./logo.webp" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -28,7 +28,7 @@
 
   <!-- IMAGEN -->
   <img 
-    src="logo.webp"
+    src="./logo.webp"
     alt="Logo oficial"
     class="logo-img"
     loading="eager"
@@ -485,212 +485,28 @@
 
   <!-- LIBRERÍA QR -->
   <script src="https://unpkg.com/html5-qrcode"></script>
-  <script id="qrscriptfinal01">
-    function onScanSuccess(decodedText) {
-      document.getElementById("qr-result").innerText =
-        "QR detectado: " + decodedText;
-
-      // Redirección automática si es un link
-      if (decodedText.startsWith("http")) {
-        window.location.href = decodedText;
-      }
-    }
-
-    function onScanError(errorMessage) { }
-
-    const scanner = new Html5QrcodeScanner(
-      "reader",
-      { fps: 10, qrbox: 200 },
-      false,
-    );
-
-    scanner.render(onScanSuccess, onScanError);
-  </script>
+  <script src="js/libreria.js" id="qrscriptfinal01"></script>
 
   <!-- ===========================
      HERO TEXTO + VIDEOS
     ============================= -->
-
-  <script>
-    const videos = document.querySelectorAll(".carousel-video");
-    let current = 0;
-
-    function changeVideo() {
-      videos[current].classList.remove("active");
-      current = (current + 1) % videos.length;
-      videos[current].classList.add("active");
-    }
-
-    setInterval(changeVideo, 5000); // cambia cada 5 segundos
-  </script>
+  <script src="js/videos.js"></script>
 
   <!-- ============================
      SCRIPT NUESTROS EVENTOS
     ============================ -->
 
-  <script>
-    const track = document.getElementById("track");
-    const items = document.querySelectorAll(".carousel-item");
-    const nextBtn = document.querySelector(".next");
-    const prevBtn = document.querySelector(".prev");
-
-    let index = 0;
-    const total = items.length;
-
-    function updateCarousel() {
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextSlide() {
-      index = (index + 1) % total; // loop infinito
-      updateCarousel();
-    }
-
-    function prevSlide() {
-      index = (index - 1 + total) % total;
-      updateCarousel();
-    }
-
-    nextBtn.addEventListener("click", nextSlide);
-    prevBtn.addEventListener("click", prevSlide);
-
-    // AUTOPLAY
-    let autoplay = setInterval(nextSlide, 3000);
-
-    // PAUSA AL HOVER
-    document.querySelector(".carousel").addEventListener("mouseenter", () => {
-      clearInterval(autoplay);
-    });
-
-    document.querySelector(".carousel").addEventListener("mouseleave", () => {
-      autoplay = setInterval(nextSlide, 3000);
-    });
-  </script>
+  <script src="js/eventos.js"></script>
 
   <!-- ========================
         UBICACION
     ========================== -->
-  <script>
-    function solicitarPermisoNotificaciones() {
-      if ("Notification" in window && Notification.permission !== "granted") {
-        Notification.requestPermission();
-      }
-    }
-
-    function mostrarNotificacion() {
-      if (Notification.permission === "granted") {
-        new Notification("⏰ Servicio próximo", {
-          body: "Faltan 10 minutos para el servicio. ¡Te esperamos!",
-          icon: "https://cdn-icons-png.flaticon.com/512/190/190411.png",
-        });
-      }
-    }
-
-    function actualizarHorario() {
-      const ahora = new Date();
-      const dia = ahora.getDay(); // 0 domingo
-      const estado = document.getElementById("estado-horario");
-      const contador = document.getElementById("contador");
-
-      // CONFIG: domingo 9:00 AM
-      const inicio = new Date();
-      inicio.setDate(ahora.getDate() + ((7 - dia) % 7));
-      inicio.setHours(9, 0, 0, 0);
-
-      const fin = new Date(inicio);
-      fin.setHours(11);
-
-      // ESTADO
-      if (dia === 0 && ahora >= inicio && ahora < fin) {
-        estado.textContent = "🟢 Estamos en servicio ahora";
-        estado.style.color = "#00ff88";
-        contador.textContent = "Finaliza en curso";
-      } else {
-        estado.textContent = "🔴 Cerrado en este momento";
-        estado.style.color = "#ff4d4d";
-
-        const diff = inicio - ahora;
-        const horas = Math.floor(diff / (1000 * 60 * 60));
-        const minutos = Math.floor((diff / (1000 * 60)) % 60);
-
-        contador.textContent = `⏳ Faltan ${horas}h ${minutos}min para el próximo servicio`;
-      }
-
-      // 🔔 NOTIFICACIÓN 10 MIN ANTES
-      const diezMinAntes = new Date(inicio.getTime() - 10 * 60 * 1000);
-
-      if (
-        ahora.getHours() === diezMinAntes.getHours() &&
-        ahora.getMinutes() === diezMinAntes.getMinutes()
-      ) {
-        mostrarNotificacion();
-      }
-
-      // GOOGLE CALENDAR
-      const fechaInicio =
-        inicio.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
-      const fechaFin =
-        fin.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
-
-      const calendarURL = `https://www.google.com/calendar/render?action=TEMPLATE&text=Servicio+Iglesia&dates=${fechaInicio}/${fechaFin}&details=Servicio+en+Casa+Apostolica+y+Profetica&location=Cartagena,Colombia`;
-
-      document.getElementById("calendar-link").href = calendarURL;
-    }
-
-    // ACTIVAR PERMISO AL CARGAR
-    solicitarPermisoNotificaciones();
-
-    actualizarHorario();
-    setInterval(actualizarHorario, 60000);
-  </script>
+  
+    <script src="js/ubicacion.js"></script>
 
   <!-- SCRIPT MENU RESPONSIVE -->
-  <script>
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("nav-menu");
-const navbar = document.getElementById("navbar");
-
-/* ABRIR / CERRAR MENÚ */
-toggle.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  toggle.classList.toggle("active");
-});
-
-/* CERRAR AL HACER CLICK */
-document.querySelectorAll(".nav-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    menu.classList.remove("active");
-    toggle.classList.remove("active");
-  });
-});
-
-/* CAMBIO DE COLOR AL SCROLL */
-window.addEventListener("scroll", () => {
-  navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
-</script>
-
-  <!-- Scritp de referencia carrusel ministerios -->
-
-  <!--<script>
-      let index = 0;
-
-      function moverMinisterios() {
-        const track = document.querySelector(".ministerios-track");
-        const cards = document.querySelectorAll(".ministerios-track .card");
-
-        index++;
-
-        if (index > cards.length - 3) {
-          index = 0;
-        }
-
-        track.style.transform = `translateX(-${index * 300}px)`;
-      }
-
-      /* AUTO */
-      setInterval(moverMinisterios, 3000);
-    </script>-->
+  
+    <script src="js/menu.js"></script>
 
 </body>
 
