@@ -1434,6 +1434,22 @@ body {
   box-shadow:0 12px 25px rgba(234,67,53,.45);
 }
 
+/* =========================
+   THREADS
+========================= */
+
+.socials .threads{
+  background:#000;
+  color:#fff;
+}
+
+.socials .threads:hover{
+  transform:translateY(-8px) scale(1.08);
+  box-shadow:0 12px 25px rgba(0,0,0,.45);
+}
+
+
+
 /* ============================
    ASESOR VIRTUAL TABOCAP (OPTIMIZADO)
 ============================ */
