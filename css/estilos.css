@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* ============================
    ESTILOS GENERALES
 ============================ */
@@ -1092,70 +1098,341 @@ body {
 /* ============================
    FOOTER
 ============================ */
-.footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
+/* =========================
+   FOOTER GENERAL
+========================= */
+
+.footer{
+  background:#0f172a;
+  color:#fff;
+  padding:60px 8% 20px;
+  font-family:'Poppins',sans-serif;
 }
 
-.footer h3 {
-  margin-bottom: 10px;
+.footer-container{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  align-items:flex-start;
 }
 
-.footer p {
-  margin: 5px 0;
-  color: #aaa;
+/* =========================
+   COLUMNAS
+========================= */
+
+.footer-col h2,
+.footer-col h3{
+  margin-bottom:18px;
+  font-weight:600;
 }
 
-.redes {
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.logo-text{
+  font-size:1.5rem;
+  color:#00bfff;
 }
 
-.redes a {
-  color: #00c2ff;
-  text-decoration: none;
-  transition: 0.3s;
+.footer-col p{
+  color:#cbd5e1;
+  line-height:1.8;
+  font-size:.95rem;
 }
 
-.redes a:hover {
-  color: #fff;
+.footer-col ul{
+  list-style:none;
+  padding:0;
+  margin:0;
 }
 
-.copy {
-  margin-top: 20px;
-  font-size: 0.9rem;
-  color: #666;
+.footer-col ul li{
+  margin-bottom:12px;
+  color:#cbd5e1;
+  transition:.3s ease;
+  cursor:pointer;
 }
 
-.redes a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #00c2ff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: 0.3s;
+.footer-col ul li:hover{
+  color:#00bfff;
+  transform:translateX(5px);
 }
 
-.redes a i {
-  font-size: 1.4rem;
+/* =========================
+   REDES SOCIALES
+========================= */
+
+.socials{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
 }
 
-.redes a:hover {
-  color: #fff;
-  transform: translateY(-2px);
+.socials a{
+  width:45px;
+  height:45px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:1.2rem;
+  text-decoration:none;
+  transition:.3s ease;
 }
 
-.fa-whatsapp { color: #25D366; }
-.fa-instagram { color: #E4405F; }
-.fa-youtube { color: #FF0000; }
-.fa-facebook { color: #1877F2; }
+.socials a:hover{
+  background:#00bfff;
+  transform:translateY(-5px);
+}
 
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom{
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+}
+
+.footer-bottom p{
+  color:#94a3b8;
+  font-size:.9rem;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width:992px){
+
+  .footer{
+    padding:50px 6% 20px;
+  }
+
+  .footer-container{
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+  }
+
+  .logo-text{
+    font-size:1.3rem;
+  }
+
+}
+
+/* =========================
+   MÓVILES
+========================= */
+
+@media (max-width:768px){
+
+  .footer{
+    padding:45px 5% 20px;
+    text-align:center;
+  }
+
+  .footer-container{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .socials{
+    justify-content:center;
+  }
+
+  .footer-col ul li:hover{
+    transform:none;
+  }
+
+}
+
+/* =========================
+   MÓVILES PEQUEÑOS
+========================= */
+
+@media (max-width:480px){
+
+  .footer{
+    padding:40px 20px 20px;
+  }
+
+  .logo-text{
+    font-size:1.1rem;
+  }
+
+  .footer-col h3{
+    font-size:1rem;
+  }
+
+  .footer-col p,
+  .footer-col ul li,
+  .footer-bottom p{
+    font-size:.88rem;
+  }
+
+  .socials a{
+    width:42px;
+    height:42px;
+    font-size:1rem;
+  }
+
+}
+
+/* =========================
+   REDES SOCIALES PRO
+========================= */
+
+.socials{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.socials a{
+  width:52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:1.3rem;
+  color:#fff;
+  position:relative;
+  overflow:hidden;
+  transition:all .35s ease;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* EFECTO BRILLO */
+.socials a::before{
+  content:"";
+  position:absolute;
+  width:120%;
+  height:120%;
+  background:rgba(255,255,255,.18);
+  top:-120%;
+  left:-120%;
+  transform:rotate(45deg);
+  transition:.5s ease;
+}
+
+.socials a:hover::before{
+  top:120%;
+  left:120%;
+}
+
+/* HOVER GENERAL */
+.socials a:hover{
+  transform:translateY(-8px) scale(1.08);
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.socials .whatsapp{
+  background:#25D366;
+}
+
+.socials .whatsapp:hover{
+  box-shadow:0 12px 25px rgba(37,211,102,.45);
+}
+
+/* =========================
+   INSTAGRAM
+========================= */
+
+.socials .instagram{
+  background:linear-gradient(
+    45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+}
+
+.socials .instagram:hover{
+  box-shadow:0 12px 25px rgba(220,39,67,.45);
+}
+
+/* =========================
+   FACEBOOK
+========================= */
+
+.socials .facebook{
+  background:#1877F2;
+}
+
+.socials .facebook:hover{
+  box-shadow:0 12px 25px rgba(24,119,242,.45);
+}
+
+/* =========================
+   YOUTUBE
+========================= */
+
+.socials .youtube{
+  background:#FF0000;
+}
+
+.socials .youtube:hover{
+  box-shadow:0 12px 25px rgba(255,0,0,.45);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:768px){
+
+  .socials{
+    justify-content:center;
+  }
+
+  .socials a{
+    width:48px;
+    height:48px;
+    font-size:1.15rem;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .socials{
+    gap:12px;
+  }
+
+  .socials a{
+    width:44px;
+    height:44px;
+    font-size:1rem;
+  }
+
+}
+
+/* =========================
+   GMAIL / EMAIL
+========================= */
+
+.socials .gmail{
+  background:linear-gradient(
+    45deg,
+    #EA4335,
+    #FBBC05,
+    #34A853,
+    #4285F4
+  );
+}
+
+.socials .gmail:hover{
+  box-shadow:0 12px 25px rgba(234,67,53,.45);
+}
 
 /* ============================
    ASESOR VIRTUAL TABOCAP (OPTIMIZADO)
